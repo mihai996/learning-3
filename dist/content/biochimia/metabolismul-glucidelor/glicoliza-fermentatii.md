@@ -1,0 +1,1 @@
+# Glicoliza și fermentațiile

@@ -33,24 +33,257 @@
       "title": "Biochimia",
       "modules": [
         {
-          "id": "biomolecule",
-          "title": "Modulul 1 · Biomolecule",
+          "id": "fundamente",
+          "title": "Modulul 1 · Fundamentele biochimiei",
           "topics": [
             {
-              "id": "biochimia-proteine",
-              "title": "Proteinele",
-              "path": "content/biochimia/biomolecule/proteine.md"
+              "id": "biochimia-introducere",
+              "title": "Introducere în biochimie",
+              "path": "content/biochimia/fundamente/introducere.md"
+            },
+            {
+              "id": "biochimia-apa",
+              "title": "Apa și rolul ei biologic",
+              "path": "content/biochimia/fundamente/apa-si-rolul-biologic.md"
+            },
+            {
+              "id": "biochimia-ph-tampoane",
+              "title": "pH-ul, soluțiile tampon și echilibrul acido-bazic",
+              "path": "content/biochimia/fundamente/ph-tampoane-echilibru-acido-bazic.md"
             }
           ]
         },
         {
-          "id": "metabolism",
-          "title": "Modulul 2 · Metabolism",
+          "id": "aminoacizi-proteine",
+          "title": "Modulul 2 · Aminoacizi și proteine",
           "topics": [
             {
-              "id": "biochimia-metabolism",
+              "id": "biochimia-aminoacizi",
+              "title": "Aminoacizii",
+              "path": "content/biochimia/aminoacizi-proteine/aminoacizi.md"
+            },
+            {
+              "id": "biochimia-peptide",
+              "title": "Peptidele și legătura peptidică",
+              "path": "content/biochimia/aminoacizi-proteine/peptide-legatura-peptidica.md"
+            },
+            {
+              "id": "biochimia-structura-proteinelor",
+              "title": "Structura proteinelor",
+              "path": "content/biochimia/aminoacizi-proteine/structura-proteinelor.md"
+            },
+            {
+              "id": "biochimia-proprietati-functii-proteine",
+              "title": "Proprietățile și funcțiile proteinelor",
+              "path": "content/biochimia/aminoacizi-proteine/proprietati-functii-proteine.md"
+            }
+          ]
+        },
+        {
+          "id": "enzime-vitamine",
+          "title": "Modulul 3 · Enzime, vitamine și coenzime",
+          "topics": [
+            {
+              "id": "biochimia-enzime-structura-clasificare",
+              "title": "Enzimele: structură și clasificare",
+              "path": "content/biochimia/enzime-vitamine/enzime-structura-clasificare.md"
+            },
+            {
+              "id": "biochimia-cinetica-enzimatica",
+              "title": "Cinetica enzimatică",
+              "path": "content/biochimia/enzime-vitamine/cinetica-enzimatica.md"
+            },
+            {
+              "id": "biochimia-reglarea-enzimelor",
+              "title": "Reglarea activității enzimatice",
+              "path": "content/biochimia/enzime-vitamine/reglarea-activitatii-enzimatice.md"
+            },
+            {
+              "id": "biochimia-vitamine-coenzime",
+              "title": "Vitaminele și coenzimele",
+              "path": "content/biochimia/enzime-vitamine/vitamine-coenzime.md"
+            }
+          ]
+        },
+        {
+          "id": "glucide-lipide-membrane",
+          "title": "Modulul 4 · Glucide, lipide și membrane",
+          "topics": [
+            {
+              "id": "biochimia-monozaharide-dizaharide",
+              "title": "Monozaharidele și dizaharidele",
+              "path": "content/biochimia/glucide-lipide-membrane/monozaharide-dizaharide.md"
+            },
+            {
+              "id": "biochimia-polizaharide-glicoconjugati",
+              "title": "Polizaharidele și glicoconjugații",
+              "path": "content/biochimia/glucide-lipide-membrane/polizaharide-glicoconjugati.md"
+            },
+            {
+              "id": "biochimia-lipide",
+              "title": "Lipidele: structură și clasificare",
+              "path": "content/biochimia/glucide-lipide-membrane/lipide-structura-clasificare.md"
+            },
+            {
+              "id": "biochimia-membrane-transport",
+              "title": "Membranele biologice și transportul membranar",
+              "path": "content/biochimia/glucide-lipide-membrane/membrane-transport.md"
+            }
+          ]
+        },
+        {
+          "id": "acizi-nucleici",
+          "title": "Modulul 5 · Nucleotide și acizi nucleici",
+          "topics": [
+            {
+              "id": "biochimia-nucleotide-acizi-nucleici",
+              "title": "Nucleotidele și acizii nucleici",
+              "path": "content/biochimia/acizi-nucleici/nucleotide-acizi-nucleici.md"
+            },
+            {
+              "id": "biochimia-replicarea-adn",
+              "title": "Replicarea ADN-ului",
+              "path": "content/biochimia/acizi-nucleici/replicarea-adn.md"
+            },
+            {
+              "id": "biochimia-transcrierea-arn",
+              "title": "Transcrierea și procesarea ARN-ului",
+              "path": "content/biochimia/acizi-nucleici/transcrierea-procesarea-arn.md"
+            },
+            {
+              "id": "biochimia-biosinteza-proteinelor",
+              "title": "Biosinteza proteinelor",
+              "path": "content/biochimia/acizi-nucleici/biosinteza-proteinelor.md"
+            }
+          ]
+        },
+        {
+          "id": "bioenergetica",
+          "title": "Modulul 6 · Bioenergetică și principii de metabolism",
+          "topics": [
+            {
+              "id": "biochimia-principii-metabolism",
               "title": "Principii de metabolism",
               "path": "content/biochimia/metabolism/principii.md"
+            },
+            {
+              "id": "biochimia-atp-bioenergetica",
+              "title": "Bioenergetica și rolul ATP-ului",
+              "path": "content/biochimia/bioenergetica/bioenergetica-atp.md"
+            },
+            {
+              "id": "biochimia-ciclul-krebs",
+              "title": "Ciclul acidului citric",
+              "path": "content/biochimia/bioenergetica/ciclul-acidului-citric.md"
+            },
+            {
+              "id": "biochimia-lant-respirator",
+              "title": "Lanțul respirator și fosforilarea oxidativă",
+              "path": "content/biochimia/bioenergetica/lant-respirator-fosforilare-oxidativa.md"
+            }
+          ]
+        },
+        {
+          "id": "metabolismul-glucidelor",
+          "title": "Modulul 7 · Metabolismul glucidelor",
+          "topics": [
+            {
+              "id": "biochimia-glicoliza",
+              "title": "Glicoliza și fermentațiile",
+              "path": "content/biochimia/metabolismul-glucidelor/glicoliza-fermentatii.md"
+            },
+            {
+              "id": "biochimia-gluconeogeneza",
+              "title": "Gluconeogeneza",
+              "path": "content/biochimia/metabolismul-glucidelor/gluconeogeneza.md"
+            },
+            {
+              "id": "biochimia-glicogen",
+              "title": "Metabolismul glicogenului",
+              "path": "content/biochimia/metabolismul-glucidelor/metabolismul-glicogenului.md"
+            },
+            {
+              "id": "biochimia-calea-pentozofosfatilor",
+              "title": "Calea pentozofosfaților",
+              "path": "content/biochimia/metabolismul-glucidelor/calea-pentozofosfatilor.md"
+            }
+          ]
+        },
+        {
+          "id": "metabolismul-lipidelor",
+          "title": "Modulul 8 · Metabolismul lipidelor",
+          "topics": [
+            {
+              "id": "biochimia-beta-oxidarea",
+              "title": "β-oxidarea acizilor grași",
+              "path": "content/biochimia/metabolismul-lipidelor/beta-oxidarea-acizilor-grasi.md"
+            },
+            {
+              "id": "biochimia-cetogeneza",
+              "title": "Cetogeneza și utilizarea corpilor cetonici",
+              "path": "content/biochimia/metabolismul-lipidelor/cetogeneza-corpi-cetonici.md"
+            },
+            {
+              "id": "biochimia-biosinteza-acizilor-grasi",
+              "title": "Biosinteza acizilor grași și a triacilglicerolilor",
+              "path": "content/biochimia/metabolismul-lipidelor/biosinteza-acizilor-grasi-triacilglicerolilor.md"
+            },
+            {
+              "id": "biochimia-colesterol-lipoproteine",
+              "title": "Metabolismul colesterolului și al lipoproteinelor",
+              "path": "content/biochimia/metabolismul-lipidelor/metabolismul-colesterolului-lipoproteinelor.md"
+            }
+          ]
+        },
+        {
+          "id": "metabolismul-compusilor-azotati",
+          "title": "Modulul 9 · Metabolismul compușilor azotați",
+          "topics": [
+            {
+              "id": "biochimia-catabolism-aminoacizi",
+              "title": "Catabolismul aminoacizilor",
+              "path": "content/biochimia/metabolismul-compusilor-azotati/catabolismul-aminoacizilor.md"
+            },
+            {
+              "id": "biochimia-ciclul-ureei",
+              "title": "Ciclul ureei",
+              "path": "content/biochimia/metabolismul-compusilor-azotati/ciclul-ureei.md"
+            },
+            {
+              "id": "biochimia-biosinteza-aminoacizilor",
+              "title": "Biosinteza aminoacizilor",
+              "path": "content/biochimia/metabolismul-compusilor-azotati/biosinteza-aminoacizilor.md"
+            },
+            {
+              "id": "biochimia-metabolism-nucleotide",
+              "title": "Metabolismul nucleotidelor",
+              "path": "content/biochimia/metabolismul-compusilor-azotati/metabolismul-nucleotidelor.md"
+            }
+          ]
+        },
+        {
+          "id": "integrarea-metabolismului",
+          "title": "Modulul 10 · Integrarea și reglarea metabolismului",
+          "topics": [
+            {
+              "id": "biochimia-reglare-hormonala",
+              "title": "Reglarea hormonală a metabolismului",
+              "path": "content/biochimia/integrarea-metabolismului/reglarea-hormonala.md"
+            },
+            {
+              "id": "biochimia-integrare-tesuturi",
+              "title": "Integrarea metabolismului între țesuturi și organe",
+              "path": "content/biochimia/integrarea-metabolismului/integrarea-intre-tesuturi-organe.md"
+            },
+            {
+              "id": "biochimia-stari-nutritionale",
+              "title": "Metabolismul în starea postprandială și în repausul alimentar",
+              "path": "content/biochimia/integrarea-metabolismului/stari-nutritionale.md"
+            },
+            {
+              "id": "biochimia-stres-efort",
+              "title": "Adaptarea metabolică la efort și stres",
+              "path": "content/biochimia/integrarea-metabolismului/efort-stres.md"
             }
           ]
         }
