@@ -1027,24 +1027,507 @@
       "title": "Pedologia",
       "modules": [
         {
-          "id": "formarea-solului",
-          "title": "Modulul 1 · Formarea solului",
+          "id": "fundamente",
+          "title": "Modulul 1 · Fundamentele pedologiei",
           "topics": [
+            {
+              "id": "pedologia-introducere",
+              "title": "Introducere în pedologie",
+              "path": "content/pedologia/fundamente/introducere.md"
+            },
+            {
+              "id": "pedologia-istoria",
+              "title": "Istoria dezvoltării pedologiei",
+              "path": "content/pedologia/fundamente/istoria-pedologiei.md"
+            },
+            {
+              "id": "pedologia-functiile-solului",
+              "title": "Solul ca sistem natural și funcțiile sale",
+              "path": "content/pedologia/fundamente/solul-sistem-natural-functii.md"
+            },
+            {
+              "id": "pedologia-metode-studiu",
+              "title": "Metode de studiu, eșantionare și analiză a solului",
+              "path": "content/pedologia/fundamente/metode-studiu-esantionare-analiza.md"
+            }
+          ]
+        },
+        {
+          "id": "componentele-solului",
+          "title": "Modulul 2 · Componentele solului",
+          "topics": [
+            {
+              "id": "pedologia-componenta-minerala",
+              "title": "Componenta minerală a solului",
+              "path": "content/pedologia/componentele-solului/componenta-minerala.md"
+            },
+            {
+              "id": "pedologia-materia-organica",
+              "title": "Materia organică a solului",
+              "path": "content/pedologia/componentele-solului/materia-organica.md"
+            },
+            {
+              "id": "pedologia-complex-coloidal",
+              "title": "Complexul coloidal al solului",
+              "path": "content/pedologia/componentele-solului/complexul-coloidal.md"
+            },
+            {
+              "id": "pedologia-solutia-aerul-solului",
+              "title": "Soluția și aerul solului",
+              "path": "content/pedologia/componentele-solului/solutia-aerul-solului.md"
+            }
+          ]
+        },
+        {
+          "id": "formarea-solului",
+          "title": "Modulul 3 · Formarea și evoluția solului",
+          "topics": [
+            {
+              "id": "pedologia-alterarea-rocilor",
+              "title": "Alterarea rocilor și formarea materialului parental",
+              "path": "content/pedologia/formarea-solului/alterarea-rocilor-material-parental.md"
+            },
             {
               "id": "pedologia-factori-pedogenetici",
               "title": "Factorii pedogenetici",
               "path": "content/pedologia/formarea-solului/factori-pedogenetici.md"
+            },
+            {
+              "id": "pedologia-procese-pedogenetice",
+              "title": "Procesele pedogenetice fundamentale",
+              "path": "content/pedologia/formarea-solului/procese-pedogenetice.md"
+            },
+            {
+              "id": "pedologia-formarea-orizonturilor",
+              "title": "Formarea și diferențierea orizonturilor de sol",
+              "path": "content/pedologia/formarea-solului/formarea-diferentierea-orizonturilor.md"
+            },
+            {
+              "id": "pedologia-evolutia-solurilor",
+              "title": "Evoluția solurilor în timp",
+              "path": "content/pedologia/formarea-solului/evolutia-solurilor.md"
+            }
+          ]
+        },
+        {
+          "id": "morfologia-solului",
+          "title": "Modulul 4 · Morfologia solului",
+          "topics": [
+            {
+              "id": "pedologia-profil-orizonturi",
+              "title": "Profilul de sol și orizonturile pedogenetice",
+              "path": "content/pedologia/morfologia-solului/profil-orizonturi-pedogenetice.md"
+            },
+            {
+              "id": "pedologia-culoarea-solului",
+              "title": "Culoarea solului",
+              "path": "content/pedologia/morfologia-solului/culoarea-solului.md"
+            },
+            {
+              "id": "pedologia-caractere-morfologice",
+              "title": "Caracterele morfologice ale solului",
+              "path": "content/pedologia/morfologia-solului/caractere-morfologice.md"
+            },
+            {
+              "id": "pedologia-descriere-profil",
+              "title": "Descrierea și diagnosticarea profilului în teren",
+              "path": "content/pedologia/morfologia-solului/descriere-diagnosticare-profil.md"
             }
           ]
         },
         {
           "id": "proprietatile-solului",
-          "title": "Modulul 2 · Proprietățile solului",
+          "title": "Modulul 5 · Proprietățile fizice și fizico-mecanice",
           "topics": [
             {
               "id": "pedologia-proprietati-fizice",
-              "title": "Proprietăți fizice",
+              "title": "Proprietăți fizice ale solului",
               "path": "content/pedologia/proprietatile-solului/proprietati-fizice.md"
+            },
+            {
+              "id": "pedologia-textura",
+              "title": "Textura solului",
+              "path": "content/pedologia/proprietatile-solului/textura-solului.md"
+            },
+            {
+              "id": "pedologia-structura-agregare",
+              "title": "Structura și agregarea solului",
+              "path": "content/pedologia/proprietatile-solului/structura-agregarea-solului.md"
+            },
+            {
+              "id": "pedologia-densitate-porozitate",
+              "title": "Densitatea și porozitatea solului",
+              "path": "content/pedologia/proprietatile-solului/densitate-porozitate.md"
+            },
+            {
+              "id": "pedologia-consistenta-plasticitate",
+              "title": "Consistența, plasticitatea și compactarea solului",
+              "path": "content/pedologia/proprietatile-solului/consistenta-plasticitate-compactare.md"
+            }
+          ]
+        },
+        {
+          "id": "proprietati-chimice",
+          "title": "Modulul 6 · Proprietățile fizico-chimice și chimice",
+          "topics": [
+            {
+              "id": "pedologia-adsorbtie-schimb-ionic",
+              "title": "Adsorbția și schimbul ionic în sol",
+              "path": "content/pedologia/proprietati-chimice/adsorbtie-schimb-ionic.md"
+            },
+            {
+              "id": "pedologia-reactie-capacitate-tampon",
+              "title": "Reacția solului și capacitatea de tamponare",
+              "path": "content/pedologia/proprietati-chimice/reactia-solului-capacitatea-tamponare.md"
+            },
+            {
+              "id": "pedologia-salinitate-sodicitate",
+              "title": "Salinitatea și sodicitatea solului",
+              "path": "content/pedologia/proprietati-chimice/salinitate-sodicitate.md"
+            },
+            {
+              "id": "pedologia-potential-redox",
+              "title": "Potențialul de oxidoreducere al solului",
+              "path": "content/pedologia/proprietati-chimice/potential-oxidoreducere.md"
+            },
+            {
+              "id": "pedologia-elemente-nutritive",
+              "title": "Elementele nutritive și disponibilitatea lor în sol",
+              "path": "content/pedologia/proprietati-chimice/elemente-nutritive-disponibilitate.md"
+            }
+          ]
+        },
+        {
+          "id": "regimurile-solului",
+          "title": "Modulul 7 · Regimurile solului",
+          "topics": [
+            {
+              "id": "pedologia-regim-hidric",
+              "title": "Regimul hidric al solului",
+              "path": "content/pedologia/regimurile-solului/regimul-hidric.md"
+            },
+            {
+              "id": "pedologia-regim-aer",
+              "title": "Regimul de aer al solului",
+              "path": "content/pedologia/regimurile-solului/regimul-de-aer.md"
+            },
+            {
+              "id": "pedologia-regim-termic",
+              "title": "Regimul termic al solului",
+              "path": "content/pedologia/regimurile-solului/regimul-termic.md"
+            },
+            {
+              "id": "pedologia-regim-nutritiv",
+              "title": "Regimul nutritiv al solului",
+              "path": "content/pedologia/regimurile-solului/regimul-nutritiv.md"
+            }
+          ]
+        },
+        {
+          "id": "biologia-fertilitatea-solului",
+          "title": "Modulul 8 · Biologia, humusul și fertilitatea solului",
+          "topics": [
+            {
+              "id": "pedologia-edafon",
+              "title": "Edafonul și activitatea biologică a solului",
+              "path": "content/pedologia/biologia-fertilitatea-solului/edafon-activitate-biologica.md"
+            },
+            {
+              "id": "pedologia-formarea-humusului",
+              "title": "Formarea și compoziția humusului",
+              "path": "content/pedologia/biologia-fertilitatea-solului/formarea-compozitia-humusului.md"
+            },
+            {
+              "id": "pedologia-cicluri-biogeochimice",
+              "title": "Ciclurile biogeochimice în sol",
+              "path": "content/pedologia/biologia-fertilitatea-solului/cicluri-biogeochimice.md"
+            },
+            {
+              "id": "pedologia-fertilitate-productivitate",
+              "title": "Fertilitatea și productivitatea solului",
+              "path": "content/pedologia/biologia-fertilitatea-solului/fertilitate-productivitate.md"
+            },
+            {
+              "id": "pedologia-indicatori-fertilitate",
+              "title": "Indicatorii și evaluarea fertilității solului",
+              "path": "content/pedologia/biologia-fertilitatea-solului/indicatori-evaluarea-fertilitatii.md"
+            }
+          ]
+        },
+        {
+          "id": "clasificare-cartare",
+          "title": "Modulul 9 · Clasificarea, geografia și cartarea solurilor",
+          "topics": [
+            {
+              "id": "pedologia-principii-clasificare",
+              "title": "Principiile clasificării solurilor",
+              "path": "content/pedologia/clasificare-cartare/principii-clasificare.md"
+            },
+            {
+              "id": "pedologia-wrb",
+              "title": "Sistemul internațional WRB",
+              "path": "content/pedologia/clasificare-cartare/sistemul-wrb.md"
+            },
+            {
+              "id": "pedologia-zonalitate",
+              "title": "Zonalitatea și distribuția geografică a solurilor",
+              "path": "content/pedologia/clasificare-cartare/zonalitate-distributie-geografica.md"
+            },
+            {
+              "id": "pedologia-studii-cartare",
+              "title": "Studiile pedologice și cartarea solurilor",
+              "path": "content/pedologia/clasificare-cartare/studii-pedologice-cartare.md"
+            },
+            {
+              "id": "pedologia-sig-teledetectie",
+              "title": "Sistemele informaționale geografice și teledetecția în pedologie",
+              "path": "content/pedologia/clasificare-cartare/sig-teledetectie.md"
+            }
+          ]
+        },
+        {
+          "id": "evaluare-degradare-protectie",
+          "title": "Modulul 10 · Evaluarea, degradarea și protecția solurilor",
+          "topics": [
+            {
+              "id": "pedologia-evaluare-bonitare",
+              "title": "Evaluarea terenurilor și bonitarea solurilor",
+              "path": "content/pedologia/evaluare-degradare-protectie/evaluare-terenuri-bonitare.md"
+            },
+            {
+              "id": "pedologia-eroziune",
+              "title": "Eroziunea solului",
+              "path": "content/pedologia/evaluare-degradare-protectie/eroziunea-solului.md"
+            },
+            {
+              "id": "pedologia-degradare-fizica",
+              "title": "Degradarea fizică a solului",
+              "path": "content/pedologia/evaluare-degradare-protectie/degradarea-fizica.md"
+            },
+            {
+              "id": "pedologia-degradare-chimica-biologica",
+              "title": "Degradarea chimică și biologică a solului",
+              "path": "content/pedologia/evaluare-degradare-protectie/degradarea-chimica-biologica.md"
+            },
+            {
+              "id": "pedologia-conservare-restaurare",
+              "title": "Conservarea și restaurarea solurilor",
+              "path": "content/pedologia/evaluare-degradare-protectie/conservare-restaurare.md"
+            }
+          ]
+        },
+        {
+          "id": "cadrul-natural-republica-moldova",
+          "title": "Modulul 11 · Cadrul pedogenetic al Republicii Moldova",
+          "topics": [
+            {
+              "id": "pedologia-rm-istoria-cercetarilor",
+              "title": "Istoria cercetărilor pedologice în Republica Moldova",
+              "path": "content/pedologia/cadrul-natural-republica-moldova/istoria-cercetarilor-pedologice.md"
+            },
+            {
+              "id": "pedologia-rm-geologie-roci-parentale",
+              "title": "Geologia și rocile parentale ale Republicii Moldova",
+              "path": "content/pedologia/cadrul-natural-republica-moldova/geologie-roci-parentale.md"
+            },
+            {
+              "id": "pedologia-rm-relief",
+              "title": "Relieful și rolul său în formarea solurilor Republicii Moldova",
+              "path": "content/pedologia/cadrul-natural-republica-moldova/relief-formarea-solurilor.md"
+            },
+            {
+              "id": "pedologia-rm-clima-hidrologie",
+              "title": "Clima și hidrologia Republicii Moldova",
+              "path": "content/pedologia/cadrul-natural-republica-moldova/clima-hidrologie.md"
+            },
+            {
+              "id": "pedologia-rm-vegetatie-utilizare",
+              "title": "Vegetația naturală și utilizarea terenurilor în Republica Moldova",
+              "path": "content/pedologia/cadrul-natural-republica-moldova/vegetatie-utilizarea-terenurilor.md"
+            },
+            {
+              "id": "pedologia-rm-zonalitate-pedoclimatica",
+              "title": "Zonalitatea pedoclimatică a Republicii Moldova",
+              "path": "content/pedologia/cadrul-natural-republica-moldova/zonalitate-pedoclimatica.md"
+            }
+          ]
+        },
+        {
+          "id": "solurile-republicii-moldova",
+          "title": "Modulul 12 · Solurile Republicii Moldova",
+          "topics": [
+            {
+              "id": "pedologia-rm-clasificare-nationala",
+              "title": "Clasificarea solurilor în Republica Moldova și corelarea cu WRB",
+              "path": "content/pedologia/solurile-republicii-moldova/clasificare-nationala-corelare-wrb.md"
+            },
+            {
+              "id": "pedologia-rm-cernoziomuri",
+              "title": "Cernoziomurile Republicii Moldova",
+              "path": "content/pedologia/solurile-republicii-moldova/cernoziomurile.md"
+            },
+            {
+              "id": "pedologia-rm-cernoziomuri-carbonatice-obisnuite",
+              "title": "Cernoziomurile carbonatice și obișnuite",
+              "path": "content/pedologia/solurile-republicii-moldova/cernoziomuri-carbonatice-obisnuite.md"
+            },
+            {
+              "id": "pedologia-rm-cernoziomuri-tipice-levigate",
+              "title": "Cernoziomurile tipice și levigate",
+              "path": "content/pedologia/solurile-republicii-moldova/cernoziomuri-tipice-levigate.md"
+            },
+            {
+              "id": "pedologia-rm-soluri-cenusii-brune",
+              "title": "Solurile cenușii și brune de pădure",
+              "path": "content/pedologia/solurile-republicii-moldova/soluri-cenusii-brune-padure.md"
+            },
+            {
+              "id": "pedologia-rm-rendzine",
+              "title": "Rendzinele Republicii Moldova",
+              "path": "content/pedologia/solurile-republicii-moldova/rendzine.md"
+            },
+            {
+              "id": "pedologia-rm-soluri-aluviale-hidromorfe",
+              "title": "Solurile aluviale și hidromorfe",
+              "path": "content/pedologia/solurile-republicii-moldova/soluri-aluviale-hidromorfe.md"
+            },
+            {
+              "id": "pedologia-rm-soluri-salinizate-soloneturi",
+              "title": "Solurile salinizate și solonețurile",
+              "path": "content/pedologia/solurile-republicii-moldova/soluri-salinizate-soloneturi.md"
+            },
+            {
+              "id": "pedologia-rm-soluri-erodate-deluviale-antropice",
+              "title": "Solurile erodate, deluviale și antropice",
+              "path": "content/pedologia/solurile-republicii-moldova/soluri-erodate-deluviale-antropice.md"
+            }
+          ]
+        },
+        {
+          "id": "resurse-funciare-republica-moldova",
+          "title": "Modulul 13 · Resursele de sol ale Republicii Moldova",
+          "topics": [
+            {
+              "id": "pedologia-rm-invelis-zone",
+              "title": "Învelișul de sol al zonelor de nord, centru și sud",
+              "path": "content/pedologia/resurse-funciare-republica-moldova/invelis-sol-nord-centru-sud.md"
+            },
+            {
+              "id": "pedologia-rm-fond-funciar",
+              "title": "Fondul funciar și utilizarea agricolă a solurilor",
+              "path": "content/pedologia/resurse-funciare-republica-moldova/fond-funciar-utilizare-agricola.md"
+            },
+            {
+              "id": "pedologia-rm-harta-cadastru",
+              "title": "Harta solurilor și cadastrul funciar al Republicii Moldova",
+              "path": "content/pedologia/resurse-funciare-republica-moldova/harta-solurilor-cadastru-funciar.md"
+            },
+            {
+              "id": "pedologia-rm-bonitare",
+              "title": "Bonitarea solurilor în Republica Moldova",
+              "path": "content/pedologia/resurse-funciare-republica-moldova/bonitarea-solurilor.md"
+            },
+            {
+              "id": "pedologia-rm-pretabilitate-culturi",
+              "title": "Pretabilitatea solurilor pentru principalele culturi agricole",
+              "path": "content/pedologia/resurse-funciare-republica-moldova/pretabilitate-culturi-agricole.md"
+            },
+            {
+              "id": "pedologia-rm-monitoring-calitate",
+              "title": "Monitoringul calității solurilor în Republica Moldova",
+              "path": "content/pedologia/resurse-funciare-republica-moldova/monitoring-calitatea-solurilor.md"
+            }
+          ]
+        },
+        {
+          "id": "degradarea-solurilor-republica-moldova",
+          "title": "Modulul 14 · Degradarea solurilor în Republica Moldova",
+          "topics": [
+            {
+              "id": "pedologia-rm-eroziune-hidrica",
+              "title": "Eroziunea hidrică a solurilor în Republica Moldova",
+              "path": "content/pedologia/degradarea-solurilor-republica-moldova/eroziune-hidrica.md"
+            },
+            {
+              "id": "pedologia-rm-eroziune-eoliana",
+              "title": "Eroziunea eoliană și deflația",
+              "path": "content/pedologia/degradarea-solurilor-republica-moldova/eroziune-eoliana-deflatie.md"
+            },
+            {
+              "id": "pedologia-rm-dehumificare",
+              "title": "Dehumificarea și epuizarea elementelor nutritive",
+              "path": "content/pedologia/degradarea-solurilor-republica-moldova/dehumificare-epuizare-nutrienti.md"
+            },
+            {
+              "id": "pedologia-rm-compactare-destructurare",
+              "title": "Compactarea și destructurarea solurilor agricole",
+              "path": "content/pedologia/degradarea-solurilor-republica-moldova/compactare-destructurare.md"
+            },
+            {
+              "id": "pedologia-rm-salinizare-alcalizare",
+              "title": "Salinizarea și alcalizarea secundară",
+              "path": "content/pedologia/degradarea-solurilor-republica-moldova/salinizare-alcalizare-secundara.md"
+            },
+            {
+              "id": "pedologia-rm-alunecari-ravene",
+              "title": "Alunecările de teren și formarea ravenelor",
+              "path": "content/pedologia/degradarea-solurilor-republica-moldova/alunecari-teren-ravene.md"
+            },
+            {
+              "id": "pedologia-rm-poluare",
+              "title": "Poluarea solurilor în Republica Moldova",
+              "path": "content/pedologia/degradarea-solurilor-republica-moldova/poluarea-solurilor.md"
+            },
+            {
+              "id": "pedologia-rm-seceta-schimbari-climatice",
+              "title": "Seceta, aridizarea și schimbările climatice",
+              "path": "content/pedologia/degradarea-solurilor-republica-moldova/seceta-aridizare-schimbari-climatice.md"
+            }
+          ]
+        },
+        {
+          "id": "management-durabil-republica-moldova",
+          "title": "Modulul 15 · Managementul durabil al solurilor Republicii Moldova",
+          "topics": [
+            {
+              "id": "pedologia-rm-organizare-antierozionala",
+              "title": "Organizarea antierozională a teritoriului",
+              "path": "content/pedologia/management-durabil-republica-moldova/organizare-antierozionala-teritoriu.md"
+            },
+            {
+              "id": "pedologia-rm-agricultura-conservativa",
+              "title": "Agricultura conservativă și lucrările minime ale solului",
+              "path": "content/pedologia/management-durabil-republica-moldova/agricultura-conservativa-lucrari-minime.md"
+            },
+            {
+              "id": "pedologia-rm-asolamente-culturi-acoperire",
+              "title": "Asolamentele și culturile de acoperire",
+              "path": "content/pedologia/management-durabil-republica-moldova/asolamente-culturi-acoperire.md"
+            },
+            {
+              "id": "pedologia-rm-refacere-humus-fertilitate",
+              "title": "Refacerea humusului și managementul fertilității",
+              "path": "content/pedologia/management-durabil-republica-moldova/refacere-humus-management-fertilitate.md"
+            },
+            {
+              "id": "pedologia-rm-perdele-forestiere",
+              "title": "Perdelele forestiere de protecție",
+              "path": "content/pedologia/management-durabil-republica-moldova/perdele-forestiere-protectie.md"
+            },
+            {
+              "id": "pedologia-rm-irigare-drenaj",
+              "title": "Irigarea, drenajul și protecția solului",
+              "path": "content/pedologia/management-durabil-republica-moldova/irigare-drenaj-protectia-solului.md"
+            },
+            {
+              "id": "pedologia-rm-restaurare-terenuri",
+              "title": "Restaurarea terenurilor degradate",
+              "path": "content/pedologia/management-durabil-republica-moldova/restaurarea-terenurilor-degradate.md"
+            },
+            {
+              "id": "pedologia-rm-politici-legislatie",
+              "title": "Politicile și legislația privind protecția solului în Republica Moldova",
+              "path": "content/pedologia/management-durabil-republica-moldova/politici-legislatie-protectia-solului.md"
             }
           ]
         }
