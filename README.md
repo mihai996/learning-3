@@ -19,6 +19,8 @@ Codul interfeței este separat în `dist/assets/`.
 2. Adaugă tema în `dist/content/structure.json`.
 3. Deschide site-ul printr-un server static; fișierele Markdown nu sunt încărcate corect direct din `file://`.
 
-## Publicare
+## Publicare pe GitHub Pages
 
-Dosarul public este `dist/`. Proiectul nu necesită build sau dependențe și poate fi publicat pe orice serviciu de hosting static, inclusiv GitHub Pages.
+Dosarul public este `dist/`. Workflow-ul `.github/workflows/pages.yml` publică automat acest dosar după fiecare modificare trimisă pe ramura `main`.
+
+În artifactul GitHub Pages, `dist/index.html` devine `index.html` din rădăcina site-ului. Nu este necesară duplicarea lui în rădăcina repository-ului.
