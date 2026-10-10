@@ -3,9 +3,10 @@ const article = document.querySelector("#article");
 const menuButton = document.querySelector("#menu-button");
 const closeButton = document.querySelector("#close-button");
 const backdrop = document.querySelector("#backdrop");
-const BUILD_ID = "2026-10-10-1";
+const BUILD_ID = "2026-10-10-2";
 
 let library = null;
+let homeMarkup = "";
 
 function escapeHtml(value) {
   return value
@@ -205,6 +206,15 @@ function findTopic(id) {
   return null;
 }
 
+function showHome() {
+  article.innerHTML = homeMarkup;
+  document.querySelectorAll(".topic-link.active").forEach((item) => item.classList.remove("active"));
+  document.title = "Biblioteca pentru examene";
+  document.querySelector("#content").focus({ preventScroll: true });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  closeMenu();
+}
+
 function openTopicInNavigation(topicId) {
   const link = document.querySelector(`[data-topic-id="${CSS.escape(topicId)}"]`);
   if (!link) return;
@@ -256,7 +266,11 @@ async function showTopic(topicId) {
 
 function handleRoute() {
   const topicId = decodeURIComponent(location.hash.slice(1));
-  if (topicId) showTopic(topicId);
+  if (topicId) {
+    showTopic(topicId);
+  } else {
+    showHome();
+  }
 }
 
 async function initialize() {
@@ -265,6 +279,7 @@ async function initialize() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     library = await response.json();
     renderNavigation();
+    homeMarkup = article.innerHTML;
     handleRoute();
   } catch (error) {
     navigation.innerHTML = '<p class="status">Cuprinsul nu a putut fi încărcat.</p>';
