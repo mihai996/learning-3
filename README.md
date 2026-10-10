@@ -1,20 +1,20 @@
 # Atlas de studiu
 
-Bibliotecă statică, optimizată pentru telefon, pentru pregătirea examenelor la:
+Document web static, optimizat pentru telefon, pentru pregătirea examenelor la:
 
 - Microbiologie
 - Biochimie
 - Genetică
 - Pedologie
 
-Conținutul este separat de interfață. Notițele se scriu în Markdown în `content/`,
+Conținutul este separat de interfață. Materialele se scriu în Markdown în `content/`,
 imaginile se pun în `assets/images/`, iar materialele interactive în
 `interactives/`.
 
 ## Structura proiectului
 
 ```text
-content/subjects/       notițe Markdown grupate pe discipline
+content/subjects/       materiale Markdown grupate pe discipline
 assets/images/          imagini și diagrame statice
 interactives/           scheme interactive independente
 src/                    interfața, stilurile și navigarea
@@ -27,7 +27,7 @@ dist/                   versiunea publicabilă, generată automat
 
 1. Copiază `content/_model-modul.md` în folderul disciplinei.
 2. Completează metadatele dintre delimitatoarele `---`.
-3. Scrie notițele în Markdown.
+3. Scrie materialul în Markdown.
 4. Rulează `npm run check`. Catalogul site-ului este generat automat.
 
 Identificatorul unui modul este calea lui relativă, fără extensia `.md`.
@@ -42,8 +42,7 @@ npm run check
 npm run dev
 ```
 
-Adresa locală este afișată în terminal. Site-ul nu păstrează progres, note sau
-alte date despre cititor.
+Adresa locală este afișată în terminal.
 
 ## Publicare
 
@@ -53,4 +52,5 @@ este urcat într-un repository GitHub și Pages este configurat cu sursa
 „GitHub Actions”.
 
 Site-ul nu are operații de scriere pe server. Conținutul public este read-only,
-iar interfața nu salvează date în browser.
+iar interfața nu salvează date în browser. Cuprinsul ierarhic este generat
+automat din titlurile și subtitlurile fișierelor Markdown.

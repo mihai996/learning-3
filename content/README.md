@@ -1,6 +1,6 @@
 # Conținut
 
-Fiecare notiță publică este un fișier Markdown cu metadate YAML simple:
+Fiecare material public este un fișier Markdown cu metadate YAML simple:
 
 - `title` — titlul afișat;
 - `subject` — cheia disciplinei;

@@ -11,8 +11,6 @@ interactive: interactives/adn-la-proteina.html
 
 # Harta disciplinei
 
-> Obiectiv: leagă nivelul molecular de transmiterea caracterelor și de variația populațiilor.
-
 ## Module propuse
 
 1. Structura materialului genetic

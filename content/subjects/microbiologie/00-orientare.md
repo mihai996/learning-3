@@ -10,8 +10,6 @@ status: draft
 
 # Harta disciplinei
 
-> Obiectiv: transformă programa de examen într-o listă clară de module care pot fi învățate și verificate separat.
-
 ## Module propuse
 
 1. Structura și clasificarea microorganismelor
@@ -23,7 +21,7 @@ status: draft
 
 ## Șablon de recapitulare
 
-- definește conceptul fără notițe;
+- definește conceptul fără a consulta textul;
 - desenează structura sau procesul;
 - compară două noțiuni apropiate;
 - rezolvă o întrebare aplicată;

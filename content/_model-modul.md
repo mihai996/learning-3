@@ -10,8 +10,6 @@ status: draft
 
 # Titlul modulului
 
-> Obiectiv: după acest modul pot explica...
-
 ## Ideea centrală
 
 Scrie explicația în cuvinte proprii.
@@ -24,9 +22,3 @@ Scrie explicația în cuvinte proprii.
 
 1. Întrebare de reamintire?
 2. Întrebare de aplicare?
-
-## De completat
-
-- [ ] Sursă verificată
-- [ ] Diagramă sau exemplu
-- [ ] Întrebări de examen

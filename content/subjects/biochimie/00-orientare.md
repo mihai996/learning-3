@@ -10,8 +10,6 @@ status: draft
 
 # Harta disciplinei
 
-> Obiectiv: organizează biochimia de la structură și reacție până la reglarea metabolismului.
-
 ## Module propuse
 
 1. Apa, pH-ul și sistemele tampon

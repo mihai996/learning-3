@@ -37,7 +37,23 @@ for (const file of markdownFiles) {
   const relative = path.relative(contentRoot, file);
   const id = moduleIdFromPath(relative);
   const source = await readFile(file, "utf8");
-  const { data } = parseFrontmatter(source, relative);
+  const { data, body } = parseFrontmatter(source, relative);
+  const headingCounts = new Map();
+  const headings = body
+    .split("\n")
+    .map((line) => line.match(/^(#{2,4})\s+(.+)$/))
+    .filter(Boolean)
+    .map((match) => {
+      const base = match[2]
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "") || "sectiune";
+      const count = (headingCounts.get(base) || 0) + 1;
+      headingCounts.set(base, count);
+      return { level: match[1].length, title: match[2], id: count === 1 ? base : `${base}-${count}` };
+    });
   const destination = path.join(dist, "content", relative);
   await mkdir(path.dirname(destination), { recursive: true });
   await cp(file, destination);
@@ -55,6 +71,7 @@ for (const file of markdownFiles) {
       .split(",")
       .map((tag) => tag.trim())
       .filter(Boolean),
+    headings,
     interactive: data.interactive || null
   });
 }

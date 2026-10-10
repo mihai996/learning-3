@@ -1,5 +1,5 @@
 const app = document.querySelector("#app");
-const state = { catalog: null, query: "", routeToken: 0 };
+const state = { catalog: null, routeToken: 0 };
 
 const searchIcon = `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`;
 
@@ -14,10 +14,17 @@ function escapeHtml(value = "") {
 
 function safeUrl(value) {
   const url = String(value).trim();
-  if (/^(https?:|mailto:|#|\.\.?\/)/i.test(url) || !/^[a-z][a-z0-9+.-]*:/i.test(url)) {
-    return escapeHtml(url);
-  }
+  if (/^(https?:|mailto:|#|\.\.?\/)/i.test(url) || !/^[a-z][a-z0-9+.-]*:/i.test(url)) return escapeHtml(url);
   return "#";
+}
+
+function slugify(value) {
+  return String(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "") || "sectiune";
 }
 
 function inlineMarkdown(value) {
@@ -37,6 +44,7 @@ function stripFrontmatter(source) {
 function renderMarkdown(source) {
   const lines = stripFrontmatter(source.replace(/\r\n/g, "\n")).split("\n");
   const html = [];
+  const headingCounts = new Map();
   let paragraph = [];
   let listType = null;
   let code = null;
@@ -75,19 +83,17 @@ function renderMarkdown(source) {
       flushParagraph();
       closeList();
       const level = heading[1].length;
-      html.push(`<h${level}>${inlineMarkdown(heading[2])}</h${level}>`);
+      const base = slugify(heading[2]);
+      const count = (headingCounts.get(base) || 0) + 1;
+      headingCounts.set(base, count);
+      const id = count === 1 ? base : `${base}-${count}`;
+      html.push(`<h${level} id="${id}">${inlineMarkdown(heading[2])}</h${level}>`);
       continue;
     }
     if (/^(-{3,}|\*{3,})$/.test(line.trim())) {
       flushParagraph();
       closeList();
       html.push("<hr>");
-      continue;
-    }
-    if (line.startsWith("> ")) {
-      flushParagraph();
-      closeList();
-      html.push(`<blockquote><p>${inlineMarkdown(line.slice(2))}</p></blockquote>`);
       continue;
     }
     const unordered = line.match(/^\s*[-*]\s+(.+)$/);
@@ -100,8 +106,7 @@ function renderMarkdown(source) {
         listType = nextType;
         html.push(`<${listType}>`);
       }
-      const item = (unordered || ordered)[1];
-      html.push(`<li>${inlineMarkdown(item.replace(/^\[[ xX]\]\s+/, ""))}</li>`);
+      html.push(`<li>${inlineMarkdown((unordered || ordered)[1].replace(/^\[[ xX]\]\s+/, ""))}</li>`);
       continue;
     }
     paragraph.push(line.trim());
@@ -112,164 +117,192 @@ function renderMarkdown(source) {
   return html.join("\n");
 }
 
-function renderShell(content) {
-  app.innerHTML = `
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="brand" href="#/" aria-label="Atlas de studiu — pagina principală">
-          <span class="brand-mark" aria-hidden="true">A</span>
-          <span class="brand-copy"><strong>Atlas de studiu</strong><small>Biblioteca examenelor</small></span>
-        </a>
-        <nav aria-label="Navigare principală"><a href="#/discipline">Discipline</a></nav>
-      </header>
-      <main id="main-content">${content}</main>
-    </div>`;
-}
-
 function moduleHref(module) {
   return `#/modul/${module.id}`;
+}
+
+function sectionHref(module, heading) {
+  return `${moduleHref(module)}?sectiune=${encodeURIComponent(heading.id)}`;
 }
 
 function subjectModules(key) {
   return state.catalog.modules.filter((module) => module.subject === key);
 }
 
-function moduleCard(module, index = 0) {
-  const subject = state.catalog.subjects[module.subject];
+function outlineTree({ currentModuleId = null, currentSubject = null, allOpen = false } = {}) {
+  const currentModule = state.catalog.modules.find((module) => module.id === currentModuleId);
+  const activeSubject = currentSubject || currentModule?.subject;
   return `
-    <a class="module-card" href="${moduleHref(module)}" style="--accent:${subject.color}">
-      <span class="module-number">${String(index + 1).padStart(2, "0")}</span>
-      <span class="module-copy">
-        <small>${escapeHtml(subject.name)} · ${escapeHtml(module.duration)}</small>
-        <h3>${escapeHtml(module.title)}</h3>
-        <p>${escapeHtml(module.summary)}</p>
-      </span>
-      <span class="module-arrow" aria-hidden="true">→</span>
-    </a>`;
+    <ol class="outline-subjects">
+      ${Object.entries(state.catalog.subjects).map(([key, subject], subjectIndex) => {
+        const modules = subjectModules(key);
+        const open = allOpen || key === activeSubject;
+        return `<li>
+          <details ${open ? "open" : ""}>
+            <summary><span>${String(subjectIndex + 1).padStart(2, "0")}</span>${escapeHtml(subject.name)}</summary>
+            <ol class="outline-modules">
+              ${modules.map((module, moduleIndex) => `
+                <li class="${module.id === currentModuleId ? "current" : ""}">
+                  <a href="${moduleHref(module)}"><span>${subjectIndex + 1}.${moduleIndex + 1}</span>${escapeHtml(module.title)}</a>
+                  ${module.id === currentModuleId || allOpen ? `<ol class="outline-headings">${module.headings.map((heading) => `<li class="level-${heading.level}"><a href="${sectionHref(module, heading)}">${escapeHtml(heading.title)}</a></li>`).join("")}</ol>` : ""}
+                </li>`).join("")}
+            </ol>
+          </details>
+        </li>`;
+      }).join("")}
+    </ol>`;
 }
 
-function subjectCard(key, subject) {
-  const modules = subjectModules(key);
-  return `
-    <a class="subject-card" href="#/disciplina/${key}" style="--accent:${subject.color}">
-      <span class="subject-top"><span class="subject-code">${escapeHtml(subject.short)}</span><span>${modules.length} ${modules.length === 1 ? "modul" : "module"}</span></span>
-      <h2>${escapeHtml(subject.name)}</h2>
-      <p>${escapeHtml(subject.description)}</p>
-      <span class="subject-arrow" aria-hidden="true">→</span>
-    </a>`;
+function renderShell(content) {
+  app.innerHTML = `
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#/" aria-label="Atlas de studiu — cuprins">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <strong>Atlas de studiu</strong>
+        </a>
+        <a class="header-index" href="#/">Cuprins</a>
+      </header>
+      <main id="main-content">${content}</main>
+    </div>`;
 }
 
-function renderModuleList(modules) {
-  if (!modules.length) return `<p class="empty-state">Nu am găsit niciun modul.</p>`;
-  return `<div class="module-list">${modules.map(moduleCard).join("")}</div>`;
+function documentLayout(main, options = {}) {
+  const tree = outlineTree(options);
+  return `
+    <div class="book-layout">
+      <aside class="book-sidebar" aria-label="Cuprinsul documentului">
+        <p class="sidebar-label">Cuprins</p>
+        ${tree}
+      </aside>
+      <div class="book-main">
+        <details class="mobile-outline">
+          <summary>Cuprinsul documentului</summary>
+          ${tree}
+        </details>
+        ${main}
+      </div>
+    </div>`;
+}
+
+function moduleRow(module, subjectIndex, moduleIndex) {
+  return `
+    <li>
+      <a href="${moduleHref(module)}">
+        <span class="toc-number">${subjectIndex + 1}.${moduleIndex + 1}</span>
+        <span><strong>${escapeHtml(module.title)}</strong><small>${escapeHtml(module.summary)}</small></span>
+        <span class="toc-page">${escapeHtml(module.duration)}</span>
+      </a>
+    </li>`;
 }
 
 function homePage() {
   renderShell(`
-    <div class="page">
-      <section class="hero">
-        <p class="eyebrow">Microbiologie · Biochimie · Genetică · Pedologie</p>
-        <h1>Învață în straturi. Reține prin legături.</h1>
-        <p>Notițe clare, scheme vizuale și o navigare simplă pentru pregătirea examenelor.</p>
+    <div class="index-page">
+      <header class="document-title">
+        <p>Document de studiu</p>
+        <h1>Atlas de studiu</h1>
+        <dl><div><dt>Discipline</dt><dd>${Object.keys(state.catalog.subjects).length}</dd></div><div><dt>Module</dt><dd>${state.catalog.modules.length}</dd></div></dl>
+      </header>
+
+      <section class="index-search" aria-labelledby="search-title">
+        <h2 id="search-title">Căutare</h2>
+        <label>${searchIcon}<span class="sr-only">Caută în cuprins</span><input id="global-search" type="search" autocomplete="off" placeholder="Caută în cuprins…"></label>
+        <div id="search-results" hidden></div>
       </section>
 
-      <section class="section-block">
-        <div class="section-heading"><div><p class="eyebrow">Bibliotecă</p><h2>Discipline</h2></div></div>
-        <div class="subject-grid">${Object.entries(state.catalog.subjects).map(([key, subject]) => subjectCard(key, subject)).join("")}</div>
-      </section>
-
-      <section class="section-block search-section">
-        <div class="section-heading"><div><p class="eyebrow">Acces rapid</p><h2>Caută în notițe</h2></div></div>
-        <label class="search-box">${searchIcon}<span class="sr-only">Caută în atlas</span><input id="global-search" type="search" autocomplete="off" placeholder="Concept, modul sau etichetă…"></label>
-        <div id="search-results">${renderModuleList(state.catalog.modules)}</div>
+      <section class="general-index" aria-labelledby="index-title">
+        <h2 id="index-title">Cuprins general</h2>
+        ${outlineTree({ allOpen: true })}
       </section>
     </div>`);
 }
 
-function updateSearchResults() {
+function updateSearchResults(query) {
   const target = document.querySelector("#search-results");
   if (!target) return;
-  const query = state.query.trim().toLocaleLowerCase("ro");
-  const modules = !query ? state.catalog.modules : state.catalog.modules.filter((module) => {
+  const normalized = query.trim().toLocaleLowerCase("ro");
+  if (!normalized) {
+    target.hidden = true;
+    target.innerHTML = "";
+    return;
+  }
+  const matches = state.catalog.modules.filter((module) => {
     const subject = state.catalog.subjects[module.subject];
-    return [module.title, module.summary, module.tags.join(" "), subject.name]
+    const headings = module.headings.map((heading) => heading.title).join(" ");
+    return [subject.name, module.title, module.summary, module.tags.join(" "), headings]
       .join(" ")
       .toLocaleLowerCase("ro")
-      .includes(query);
+      .includes(normalized);
   });
-  target.innerHTML = renderModuleList(modules);
-}
-
-function disciplinesPage() {
-  renderShell(`
-    <div class="page narrow-top">
-      <a class="back-link" href="#/">← Acasă</a>
-      <header class="page-title"><p class="eyebrow">Bibliotecă</p><h1>Discipline</h1><p>Alege disciplina și deschide direct modulul de care ai nevoie.</p></header>
-      <div class="subject-grid">${Object.entries(state.catalog.subjects).map(([key, subject]) => subjectCard(key, subject)).join("")}</div>
-    </div>`);
+  target.hidden = false;
+  target.innerHTML = matches.length
+    ? `<ol class="search-matches">${matches.map((module) => `<li><a href="${moduleHref(module)}"><strong>${escapeHtml(module.title)}</strong><span>${escapeHtml(state.catalog.subjects[module.subject].name)}</span></a></li>`).join("")}</ol>`
+    : `<p class="empty-state">Niciun rezultat.</p>`;
 }
 
 function subjectPage(key) {
   const subject = state.catalog.subjects[key];
   if (!subject) return notFoundPage();
+  const entries = Object.entries(state.catalog.subjects);
+  const subjectIndex = entries.findIndex(([subjectKey]) => subjectKey === key);
   const modules = subjectModules(key);
-  renderShell(`
-    <div class="page narrow-top">
-      <a class="back-link" href="#/discipline">← Discipline</a>
-      <header class="subject-header" style="--accent:${subject.color}">
-        <span class="subject-code">${escapeHtml(subject.short)}</span>
-        <p class="eyebrow">Disciplină</p>
+  const main = `
+    <article class="paper-sheet subject-document">
+      <nav class="breadcrumbs" aria-label="Poziția în document"><a href="#/">Cuprins</a><span>/</span><span>${escapeHtml(subject.name)}</span></nav>
+      <header class="chapter-title" style="--accent:${subject.color}">
+        <p>Capitolul ${subjectIndex + 1}</p>
         <h1>${escapeHtml(subject.name)}</h1>
         <p>${escapeHtml(subject.description)}</p>
       </header>
-      <section class="section-block compact"><div class="section-heading"><h2>Module</h2></div>${renderModuleList(modules)}</section>
-    </div>`);
+      <section class="chapter-list">
+        <h2>Module</h2>
+        <ol>${modules.map((module, moduleIndex) => moduleRow(module, subjectIndex, moduleIndex)).join("")}</ol>
+      </section>
+    </article>`;
+  renderShell(documentLayout(main, { currentSubject: key }));
 }
 
-async function modulePage(id, token) {
+async function modulePage(id, token, section = null) {
   const module = state.catalog.modules.find((item) => item.id === id);
   if (!module) return notFoundPage();
   const subject = state.catalog.subjects[module.subject];
-  const modules = subjectModules(module.subject);
-  const index = modules.findIndex((item) => item.id === module.id);
-  const previous = modules[index - 1];
-  const next = modules[index + 1];
-
-  renderShell(`<div class="page"><p class="loading-message">Se încarcă modulul…</p></div>`);
+  const subjects = Object.keys(state.catalog.subjects);
+  const subjectIndex = subjects.indexOf(module.subject);
+  const moduleIndex = subjectModules(module.subject).findIndex((item) => item.id === id);
+  renderShell(`<p class="loading-message">Se încarcă documentul…</p>`);
   try {
     const response = await fetch(`./${module.path}`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const markdown = await response.text();
     if (token !== state.routeToken) return;
-    renderShell(`
-      <div class="reading-page">
-        <a class="back-link" href="#/disciplina/${module.subject}">← ${escapeHtml(subject.name)}</a>
-        <article class="article-card">
-          <header class="article-header">
-            <p class="eyebrow" style="color:${subject.color}">${escapeHtml(subject.name)} · ${escapeHtml(module.duration)}</p>
-            <h1>${escapeHtml(module.title)}</h1>
-            <p>${escapeHtml(module.summary)}</p>
-          </header>
-          ${module.interactive ? `
-            <section class="visual-section" aria-label="Vizualizare explicativă">
-              <p class="visual-label">Schemă vizuală</p>
-              <iframe src="./${safeUrl(module.interactive)}?embed=1" title="Schemă vizuală: ${escapeHtml(module.title)}" loading="lazy"></iframe>
-            </section>` : ""}
-          <div class="markdown">${renderMarkdown(markdown)}</div>
-        </article>
-        ${(previous || next) ? `<nav class="module-pagination" aria-label="Module alăturate">
-          ${previous ? `<a href="${moduleHref(previous)}"><small>← Anterior</small><strong>${escapeHtml(previous.title)}</strong></a>` : `<span></span>`}
-          ${next ? `<a class="next" href="${moduleHref(next)}"><small>Următor →</small><strong>${escapeHtml(next.title)}</strong></a>` : ""}
-        </nav>` : ""}
-      </div>`);
+    const chapterOutline = module.headings.length ? `
+      <nav class="chapter-outline" aria-label="Cuprinsul modulului">
+        <p>În acest modul</p>
+        <ol>${module.headings.map((heading, index) => `<li class="level-${heading.level}"><a href="${sectionHref(module, heading)}"><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(heading.title)}</a></li>`).join("")}</ol>
+      </nav>` : "";
+    const main = `
+      <article class="paper-sheet article-document">
+        <nav class="breadcrumbs" aria-label="Poziția în document"><a href="#/">Cuprins</a><span>/</span><a href="#/disciplina/${module.subject}">${escapeHtml(subject.name)}</a><span>/</span><span>${escapeHtml(module.title)}</span></nav>
+        <header class="article-header">
+          <p>Capitolul ${subjectIndex + 1}.${moduleIndex + 1} · ${escapeHtml(module.duration)}</p>
+          <h1>${escapeHtml(module.title)}</h1>
+          <p>${escapeHtml(module.summary)}</p>
+        </header>
+        ${chapterOutline}
+        ${module.interactive ? `<figure class="visual-section"><figcaption>Schemă vizuală</figcaption><iframe src="./${safeUrl(module.interactive)}?embed=1" title="Schemă vizuală: ${escapeHtml(module.title)}" loading="lazy"></iframe></figure>` : ""}
+        <div class="markdown">${renderMarkdown(markdown)}</div>
+      </article>`;
+    renderShell(documentLayout(main, { currentModuleId: module.id }));
+    if (section) requestAnimationFrame(() => document.getElementById(section)?.scrollIntoView({ block: "start" }));
   } catch {
     if (token !== state.routeToken) return;
-    renderShell(`<div class="page"><section class="error-card"><h1>Modulul nu s-a încărcat</h1><p>Verifică conexiunea și încearcă din nou.</p><a href="${moduleHref(module)}">Reîncarcă</a></section></div>`);
+    renderShell(`<section class="error-page"><h1>Documentul nu s-a încărcat</h1><a href="${moduleHref(module)}">Reîncarcă</a></section>`);
   }
 }
 
 function notFoundPage() {
-  renderShell(`<div class="page"><section class="error-card"><p class="eyebrow">404</p><h1>Pagina nu este în atlas</h1><a href="#/">Înapoi acasă</a></section></div>`);
+  renderShell(`<section class="error-page"><p>404</p><h1>Pagina nu există</h1><a href="#/">Cuprins</a></section>`);
 }
 
 function currentRoute() {
@@ -279,19 +312,19 @@ function currentRoute() {
 function route() {
   if (!state.catalog) return;
   const token = ++state.routeToken;
-  const value = currentRoute();
-  window.scrollTo({ top: 0, behavior: "instant" });
-  if (!value) return homePage();
-  if (value === "discipline") return disciplinesPage();
-  if (value.startsWith("disciplina/")) return subjectPage(value.slice("disciplina/".length));
-  if (value.startsWith("modul/")) return modulePage(value.slice("modul/".length), token);
+  const raw = currentRoute();
+  const [path, query = ""] = raw.split("?");
+  const params = new URLSearchParams(query);
+  const section = params.get("sectiune");
+  if (!section) window.scrollTo({ top: 0, behavior: "instant" });
+  if (!path || path === "discipline") return homePage();
+  if (path.startsWith("disciplina/")) return subjectPage(path.slice("disciplina/".length));
+  if (path.startsWith("modul/")) return modulePage(path.slice("modul/".length), token, section);
   return notFoundPage();
 }
 
 app.addEventListener("input", (event) => {
-  if (event.target.id !== "global-search") return;
-  state.query = event.target.value;
-  updateSearchResults();
+  if (event.target.id === "global-search") updateSearchResults(event.target.value);
 });
 
 window.addEventListener("hashchange", route);
@@ -304,7 +337,7 @@ async function init() {
     route();
     if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(() => {});
   } catch {
-    app.innerHTML = `<main class="page"><section class="error-card"><h1>Atlasul nu se poate deschide</h1><p>Catalogul lipsește sau conexiunea a fost întreruptă.</p><button onclick="location.reload()">Încearcă din nou</button></section></main>`;
+    app.innerHTML = `<main class="error-page"><h1>Atlasul nu se poate deschide</h1><p>Catalogul documentului lipsește.</p></main>`;
   }
 }
 

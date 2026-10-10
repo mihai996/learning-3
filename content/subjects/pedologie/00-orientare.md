@@ -10,8 +10,6 @@ status: draft
 
 # Harta disciplinei
 
-> Obiectiv: explică solul ca sistem rezultat din factori, procese și timp.
-
 ## Module propuse
 
 1. Factorii pedogenetici
