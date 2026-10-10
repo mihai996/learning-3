@@ -6,23 +6,363 @@
       "modules": [
         {
           "id": "fundamente",
-          "title": "Modulul 1 · Fundamente",
+          "title": "Modulul 1 · Fundamentele microbiologiei",
           "topics": [
             {
               "id": "microbiologia-introducere",
               "title": "Introducere în microbiologie",
               "path": "content/microbiologia/fundamente/introducere.md"
+            },
+            {
+              "id": "microbiologia-istorie",
+              "title": "Istoria microbiologiei",
+              "path": "content/microbiologia/fundamente/istoria-microbiologiei.md"
+            },
+            {
+              "id": "microbiologia-clasificare-nomenclatura",
+              "title": "Clasificarea și nomenclatura microorganismelor",
+              "path": "content/microbiologia/fundamente/clasificare-nomenclatura.md"
+            },
+            {
+              "id": "microbiologia-microscopie-colorare",
+              "title": "Microscopia și tehnicile de colorare",
+              "path": "content/microbiologia/fundamente/microscopie-tehnici-colorare.md"
             }
           ]
         },
         {
           "id": "structura-celulara",
-          "title": "Modulul 2 · Structura celulară",
+          "title": "Modulul 2 · Structura și organizarea celulară",
           "topics": [
             {
               "id": "microbiologia-celula-procariota",
               "title": "Celula procariotă",
               "path": "content/microbiologia/structura-celulara/celula-procariota.md"
+            },
+            {
+              "id": "microbiologia-membrana-perete",
+              "title": "Membrana și peretele celular bacterian",
+              "path": "content/microbiologia/structura-celulara/membrana-perete-celular.md"
+            },
+            {
+              "id": "microbiologia-structuri-suprafata",
+              "title": "Capsula, flagelii, pilii și fimbriile",
+              "path": "content/microbiologia/structura-celulara/structuri-de-suprafata.md"
+            },
+            {
+              "id": "microbiologia-structuri-interne",
+              "title": "Citoplasma, nucleoidul, ribozomii și incluziunile",
+              "path": "content/microbiologia/structura-celulara/structuri-interne.md"
+            },
+            {
+              "id": "microbiologia-endospori",
+              "title": "Endosporii bacterieni",
+              "path": "content/microbiologia/structura-celulara/endospori-bacterieni.md"
+            }
+          ]
+        },
+        {
+          "id": "crestere-cultivare",
+          "title": "Modulul 3 · Nutriție, creștere și cultivare",
+          "topics": [
+            {
+              "id": "microbiologia-nutritie",
+              "title": "Nutriția microorganismelor",
+              "path": "content/microbiologia/crestere-cultivare/nutritia-microorganismelor.md"
+            },
+            {
+              "id": "microbiologia-crestere",
+              "title": "Creșterea și multiplicarea microorganismelor",
+              "path": "content/microbiologia/crestere-cultivare/crestere-multiplicare.md"
+            },
+            {
+              "id": "microbiologia-factori-mediu",
+              "title": "Influența factorilor de mediu asupra creșterii",
+              "path": "content/microbiologia/crestere-cultivare/factori-de-mediu.md"
+            },
+            {
+              "id": "microbiologia-medii-cultura",
+              "title": "Mediile de cultură și tehnicile de însămânțare",
+              "path": "content/microbiologia/crestere-cultivare/medii-cultura-insamantare.md"
+            },
+            {
+              "id": "microbiologia-izolare-identificare",
+              "title": "Izolarea, numărarea și conservarea culturilor microbiene",
+              "path": "content/microbiologia/crestere-cultivare/izolare-numarare-conservare.md"
+            }
+          ]
+        },
+        {
+          "id": "controlul-microorganismelor",
+          "title": "Modulul 4 · Controlul microorganismelor",
+          "topics": [
+            {
+              "id": "microbiologia-sterilizare-dezinfectie",
+              "title": "Sterilizarea, dezinfecția și antisepsia",
+              "path": "content/microbiologia/controlul-microorganismelor/sterilizare-dezinfectie-antisepsie.md"
+            },
+            {
+              "id": "microbiologia-metode-fizice",
+              "title": "Metode fizice de control microbian",
+              "path": "content/microbiologia/controlul-microorganismelor/metode-fizice.md"
+            },
+            {
+              "id": "microbiologia-metode-chimice",
+              "title": "Metode chimice de control microbian",
+              "path": "content/microbiologia/controlul-microorganismelor/metode-chimice.md"
+            },
+            {
+              "id": "microbiologia-antimicrobiene",
+              "title": "Agenții antimicrobieni și mecanismele lor de acțiune",
+              "path": "content/microbiologia/controlul-microorganismelor/agenti-antimicrobieni.md"
+            },
+            {
+              "id": "microbiologia-rezistenta",
+              "title": "Rezistența la antimicrobiene",
+              "path": "content/microbiologia/controlul-microorganismelor/rezistenta-antimicrobiene.md"
+            }
+          ]
+        },
+        {
+          "id": "metabolism-microbian",
+          "title": "Modulul 5 · Metabolismul microbian",
+          "topics": [
+            {
+              "id": "microbiologia-bioenergetica",
+              "title": "Bioenergetica microbiană",
+              "path": "content/microbiologia/metabolism-microbian/bioenergetica-microbiana.md"
+            },
+            {
+              "id": "microbiologia-respiratie",
+              "title": "Respirația aerobă și anaerobă",
+              "path": "content/microbiologia/metabolism-microbian/respiratie-aeroba-anaeroba.md"
+            },
+            {
+              "id": "microbiologia-fermentatii",
+              "title": "Fermentațiile microbiene",
+              "path": "content/microbiologia/metabolism-microbian/fermentatii-microbiene.md"
+            },
+            {
+              "id": "microbiologia-fotosinteza-chemolitotrofie",
+              "title": "Fotosinteza și chemolitotrofia",
+              "path": "content/microbiologia/metabolism-microbian/fotosinteza-chemolitotrofia.md"
+            },
+            {
+              "id": "microbiologia-biosinteza",
+              "title": "Biosinteza și reglarea metabolismului microbian",
+              "path": "content/microbiologia/metabolism-microbian/biosinteza-reglare.md"
+            }
+          ]
+        },
+        {
+          "id": "genetica-microbiana",
+          "title": "Modulul 6 · Genetica microbiană",
+          "topics": [
+            {
+              "id": "microbiologia-genom-plasmide",
+              "title": "Genomul microbian și plasmidele",
+              "path": "content/microbiologia/genetica-microbiana/genom-plasmide.md"
+            },
+            {
+              "id": "microbiologia-replicare-expresie",
+              "title": "Replicarea și expresia informației genetice",
+              "path": "content/microbiologia/genetica-microbiana/replicare-expresie-genica.md"
+            },
+            {
+              "id": "microbiologia-mutatii",
+              "title": "Mutațiile și variabilitatea genetică",
+              "path": "content/microbiologia/genetica-microbiana/mutatii-variabilitate.md"
+            },
+            {
+              "id": "microbiologia-transfer-genetic",
+              "title": "Transferul orizontal de gene",
+              "path": "content/microbiologia/genetica-microbiana/transfer-orizontal-gene.md"
+            },
+            {
+              "id": "microbiologia-reglare-genica",
+              "title": "Reglarea expresiei genice la procariote",
+              "path": "content/microbiologia/genetica-microbiana/reglarea-expresiei-genice.md"
+            }
+          ]
+        },
+        {
+          "id": "diversitate-procariote",
+          "title": "Modulul 7 · Diversitatea procariotelor",
+          "topics": [
+            {
+              "id": "microbiologia-arhee",
+              "title": "Arheele",
+              "path": "content/microbiologia/diversitate-procariote/arhee.md"
+            },
+            {
+              "id": "microbiologia-bacterii-gram-pozitive",
+              "title": "Bacteriile Gram-pozitive",
+              "path": "content/microbiologia/diversitate-procariote/bacterii-gram-pozitive.md"
+            },
+            {
+              "id": "microbiologia-bacterii-gram-negative",
+              "title": "Bacteriile Gram-negative",
+              "path": "content/microbiologia/diversitate-procariote/bacterii-gram-negative.md"
+            },
+            {
+              "id": "microbiologia-grupuri-atipice",
+              "title": "Bacteriile fără perete celular și bacteriile intracelulare",
+              "path": "content/microbiologia/diversitate-procariote/bacterii-atipice-intracelulare.md"
+            },
+            {
+              "id": "microbiologia-cianobacterii",
+              "title": "Cianobacteriile",
+              "path": "content/microbiologia/diversitate-procariote/cianobacterii.md"
+            }
+          ]
+        },
+        {
+          "id": "microorganisme-eucariote",
+          "title": "Modulul 8 · Microorganisme eucariote",
+          "topics": [
+            {
+              "id": "microbiologia-fungi",
+              "title": "Fungii microscopici",
+              "path": "content/microbiologia/microorganisme-eucariote/fungi-microscopici.md"
+            },
+            {
+              "id": "microbiologia-protozoare",
+              "title": "Protozoarele",
+              "path": "content/microbiologia/microorganisme-eucariote/protozoare.md"
+            },
+            {
+              "id": "microbiologia-alge",
+              "title": "Algele microscopice",
+              "path": "content/microbiologia/microorganisme-eucariote/alge-microscopice.md"
+            },
+            {
+              "id": "microbiologia-comparatie-celulara",
+              "title": "Comparația dintre celula procariotă și cea eucariotă",
+              "path": "content/microbiologia/microorganisme-eucariote/comparatie-procariote-eucariote.md"
+            }
+          ]
+        },
+        {
+          "id": "virusuri",
+          "title": "Modulul 9 · Virusuri și agenți acelulari",
+          "topics": [
+            {
+              "id": "microbiologia-virusuri-structura",
+              "title": "Structura și clasificarea virusurilor",
+              "path": "content/microbiologia/virusuri/structura-clasificare-virusuri.md"
+            },
+            {
+              "id": "microbiologia-replicare-virala",
+              "title": "Replicarea virusurilor",
+              "path": "content/microbiologia/virusuri/replicarea-virusurilor.md"
+            },
+            {
+              "id": "microbiologia-bacteriofagi",
+              "title": "Bacteriofagii",
+              "path": "content/microbiologia/virusuri/bacteriofagi.md"
+            },
+            {
+              "id": "microbiologia-viroizi-prioni",
+              "title": "Viroizii și prionii",
+              "path": "content/microbiologia/virusuri/viroizi-prioni.md"
+            },
+            {
+              "id": "microbiologia-control-infectii-virale",
+              "title": "Prevenirea și controlul infecțiilor virale",
+              "path": "content/microbiologia/virusuri/prevenire-control-infectii-virale.md"
+            }
+          ]
+        },
+        {
+          "id": "ecologie-microbiana",
+          "title": "Modulul 10 · Ecologie microbiană",
+          "topics": [
+            {
+              "id": "microbiologia-comunitati-biofilme",
+              "title": "Comunitățile microbiene și biofilmele",
+              "path": "content/microbiologia/ecologie-microbiana/comunitati-biofilme.md"
+            },
+            {
+              "id": "microbiologia-interactiuni",
+              "title": "Interacțiunile dintre microorganisme",
+              "path": "content/microbiologia/ecologie-microbiana/interactiuni-microbiene.md"
+            },
+            {
+              "id": "microbiologia-cicluri-biogeochimice",
+              "title": "Rolul microorganismelor în ciclurile biogeochimice",
+              "path": "content/microbiologia/ecologie-microbiana/cicluri-biogeochimice.md"
+            },
+            {
+              "id": "microbiologia-sol",
+              "title": "Microbiologia solului",
+              "path": "content/microbiologia/ecologie-microbiana/microbiologia-solului.md"
+            },
+            {
+              "id": "microbiologia-apa-aer",
+              "title": "Microbiologia apei și a aerului",
+              "path": "content/microbiologia/ecologie-microbiana/microbiologia-apei-aerului.md"
+            }
+          ]
+        },
+        {
+          "id": "interactiunea-cu-gazda",
+          "title": "Modulul 11 · Interacțiunea microorganism–gazdă",
+          "topics": [
+            {
+              "id": "microbiologia-microbiota",
+              "title": "Microbiota normală și microbiomul",
+              "path": "content/microbiologia/interactiunea-cu-gazda/microbiota-microbiom.md"
+            },
+            {
+              "id": "microbiologia-patogenitate",
+              "title": "Patogenitatea și factorii de virulență",
+              "path": "content/microbiologia/interactiunea-cu-gazda/patogenitate-virulenta.md"
+            },
+            {
+              "id": "microbiologia-infectie-transmitere",
+              "title": "Procesul infecțios și căile de transmitere",
+              "path": "content/microbiologia/interactiunea-cu-gazda/infectie-transmitere.md"
+            },
+            {
+              "id": "microbiologia-raspuns-imun",
+              "title": "Răspunsul imun la infecții",
+              "path": "content/microbiologia/interactiunea-cu-gazda/raspuns-imun-infectii.md"
+            },
+            {
+              "id": "microbiologia-diagnostic",
+              "title": "Diagnosticul microbiologic",
+              "path": "content/microbiologia/interactiunea-cu-gazda/diagnostic-microbiologic.md"
+            }
+          ]
+        },
+        {
+          "id": "microbiologie-aplicata",
+          "title": "Modulul 12 · Microbiologie aplicată",
+          "topics": [
+            {
+              "id": "microbiologia-alimentara",
+              "title": "Microbiologia alimentelor",
+              "path": "content/microbiologia/microbiologie-aplicata/microbiologia-alimentelor.md"
+            },
+            {
+              "id": "microbiologia-industriala",
+              "title": "Microbiologia industrială și biotehnologiile microbiene",
+              "path": "content/microbiologia/microbiologie-aplicata/microbiologie-industriala-biotehnologii.md"
+            },
+            {
+              "id": "microbiologia-agricola",
+              "title": "Microbiologia agricolă",
+              "path": "content/microbiologia/microbiologie-aplicata/microbiologia-agricola.md"
+            },
+            {
+              "id": "microbiologia-mediului",
+              "title": "Microbiologia mediului și bioremedierea",
+              "path": "content/microbiologia/microbiologie-aplicata/microbiologia-mediului-bioremediere.md"
+            },
+            {
+              "id": "microbiologia-siguranta",
+              "title": "Biosiguranța și controlul calității microbiologice",
+              "path": "content/microbiologia/microbiologie-aplicata/biosiguranta-control-calitate.md"
             }
           ]
         }
