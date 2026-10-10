@@ -3,7 +3,7 @@ const article = document.querySelector("#article");
 const menuButton = document.querySelector("#menu-button");
 const closeButton = document.querySelector("#close-button");
 const backdrop = document.querySelector("#backdrop");
-const BUILD_ID = "2026-10-10-2";
+const BUILD_ID = "2026-10-10-3";
 
 let library = null;
 let homeMarkup = "";
@@ -164,11 +164,11 @@ function renderNavigation() {
       const moduleId = `${courseId}-module-${moduleIndex}`;
       const moduleGroup = document.createElement("div");
       moduleGroup.className = "module-group";
-      const moduleTrigger = makeTrigger(module.title, moduleId, "module-trigger", courseIndex === 0 && moduleIndex === 0);
+      const moduleTrigger = makeTrigger(module.title, moduleId, "module-trigger");
       const topicList = document.createElement("div");
       topicList.id = moduleId;
       topicList.className = "nav-children";
-      topicList.hidden = !(courseIndex === 0 && moduleIndex === 0);
+      topicList.hidden = true;
 
       module.topics.forEach((topic) => {
         const link = document.createElement("a");
