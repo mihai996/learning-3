@@ -1,5 +1,4 @@
 .DS_Store
-dist/
+*.log
 .codex/
 node_modules/
-

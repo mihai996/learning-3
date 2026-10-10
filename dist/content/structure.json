@@ -1,0 +1,116 @@
+{
+  "courses": [
+    {
+      "id": "microbiologia",
+      "title": "Microbiologia",
+      "modules": [
+        {
+          "id": "fundamente",
+          "title": "Modulul 1 · Fundamente",
+          "topics": [
+            {
+              "id": "microbiologia-introducere",
+              "title": "Introducere în microbiologie",
+              "path": "content/microbiologia/fundamente/introducere.md"
+            }
+          ]
+        },
+        {
+          "id": "structura-celulara",
+          "title": "Modulul 2 · Structura celulară",
+          "topics": [
+            {
+              "id": "microbiologia-celula-procariota",
+              "title": "Celula procariotă",
+              "path": "content/microbiologia/structura-celulara/celula-procariota.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "biochimia",
+      "title": "Biochimia",
+      "modules": [
+        {
+          "id": "biomolecule",
+          "title": "Modulul 1 · Biomolecule",
+          "topics": [
+            {
+              "id": "biochimia-proteine",
+              "title": "Proteinele",
+              "path": "content/biochimia/biomolecule/proteine.md"
+            }
+          ]
+        },
+        {
+          "id": "metabolism",
+          "title": "Modulul 2 · Metabolism",
+          "topics": [
+            {
+              "id": "biochimia-metabolism",
+              "title": "Principii de metabolism",
+              "path": "content/biochimia/metabolism/principii.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "genetica",
+      "title": "Genetica",
+      "modules": [
+        {
+          "id": "genetica-clasica",
+          "title": "Modulul 1 · Genetica clasică",
+          "topics": [
+            {
+              "id": "genetica-legile-mendel",
+              "title": "Legile lui Mendel",
+              "path": "content/genetica/genetica-clasica/legile-lui-mendel.md"
+            }
+          ]
+        },
+        {
+          "id": "genetica-moleculara",
+          "title": "Modulul 2 · Genetica moleculară",
+          "topics": [
+            {
+              "id": "genetica-adn",
+              "title": "Structura ADN-ului",
+              "path": "content/genetica/genetica-moleculara/structura-adn.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pedologia",
+      "title": "Pedologia",
+      "modules": [
+        {
+          "id": "formarea-solului",
+          "title": "Modulul 1 · Formarea solului",
+          "topics": [
+            {
+              "id": "pedologia-factori-pedogenetici",
+              "title": "Factorii pedogenetici",
+              "path": "content/pedologia/formarea-solului/factori-pedogenetici.md"
+            }
+          ]
+        },
+        {
+          "id": "proprietatile-solului",
+          "title": "Modulul 2 · Proprietățile solului",
+          "topics": [
+            {
+              "id": "pedologia-proprietati-fizice",
+              "title": "Proprietăți fizice",
+              "path": "content/pedologia/proprietatile-solului/proprietati-fizice.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

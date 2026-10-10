@@ -1,56 +1,24 @@
-# Atlas de studiu
+# Biblioteca pentru examene
 
-Document web static, optimizat pentru telefon, pentru pregătirea examenelor la:
+Site static, optimizat pentru telefon, pentru organizarea materialelor de studiu în ierarhia:
 
-- Microbiologie
-- Biochimie
-- Genetică
-- Pedologie
+`curs → modul → temă`
 
-Conținutul este separat de interfață. Materialele se scriu în Markdown în `content/`,
-imaginile se pun în `assets/images/`, iar materialele interactive în
-`interactives/`.
+## Unde se modifică informația
 
-## Structura proiectului
+- `dist/content/structure.json` — cuprinsul afișat în meniul lateral.
+- `dist/content/<curs>/<modul>/<tema>.md` — conținutul temelor.
+- `dist/content/<curs>/<modul>/images/` — imaginile temelor.
+- `dist/content/<curs>/<modul>/interactive/` — vizualizări interactive HTML/JavaScript.
 
-```text
-content/subjects/       materiale Markdown grupate pe discipline
-assets/images/          imagini și diagrame statice
-interactives/           scheme interactive independente
-src/                    interfața, stilurile și navigarea
-public/                 fișierele de bază ale aplicației web
-scripts/                construire, verificare și previzualizare locală
-dist/                   versiunea publicabilă, generată automat
-```
+Codul interfeței este separat în `dist/assets/`.
 
-## Adăugarea unui modul
+## Adăugarea unei teme
 
-1. Copiază `content/_model-modul.md` în folderul disciplinei.
-2. Completează metadatele dintre delimitatoarele `---`.
-3. Scrie materialul în Markdown.
-4. Rulează `npm run check`. Catalogul site-ului este generat automat.
-
-Identificatorul unui modul este calea lui relativă, fără extensia `.md`.
-Fișierele care încep cu `_` sunt modele și nu apar în site.
-
-## Utilizare locală
-
-Este necesar Node.js 20 sau mai nou.
-
-```bash
-npm run check
-npm run dev
-```
-
-Adresa locală este afișată în terminal.
+1. Creează fișierul `.md` în dosarul cursului și modulului potrivit.
+2. Adaugă tema în `dist/content/structure.json`.
+3. Deschide site-ul printr-un server static; fișierele Markdown nu sunt încărcate corect direct din `file://`.
 
 ## Publicare
 
-Proiectul produce un site static în `dist/`. Workflow-ul din
-`.github/workflows/pages.yml` îl poate publica în GitHub Pages după ce proiectul
-este urcat într-un repository GitHub și Pages este configurat cu sursa
-„GitHub Actions”.
-
-Site-ul nu are operații de scriere pe server. Conținutul public este read-only,
-iar interfața nu salvează date în browser. Cuprinsul ierarhic este generat
-automat din titlurile și subtitlurile fișierelor Markdown.
+Dosarul public este `dist/`. Proiectul nu necesită build sau dependențe și poate fi publicat pe orice serviciu de hosting static, inclusiv GitHub Pages.
