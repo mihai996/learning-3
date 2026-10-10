@@ -3,6 +3,7 @@ const article = document.querySelector("#article");
 const menuButton = document.querySelector("#menu-button");
 const closeButton = document.querySelector("#close-button");
 const backdrop = document.querySelector("#backdrop");
+const BUILD_ID = "2026-10-10-1";
 
 let library = null;
 
@@ -234,10 +235,10 @@ async function showTopic(topicId) {
       article.innerHTML = `
         <p class="eyebrow">${escapeHtml(match.course.title)} · ${escapeHtml(match.module.title)}</p>
         <h1>${escapeHtml(match.topic.title)}</h1>
-        <iframe class="interactive-frame" src="${match.topic.path}" title="${escapeHtml(match.topic.title)}"></iframe>
+        <iframe class="interactive-frame" src="${match.topic.path}?v=${BUILD_ID}" title="${escapeHtml(match.topic.title)}"></iframe>
       `;
     } else {
-      const response = await fetch(match.topic.path);
+      const response = await fetch(`${match.topic.path}?v=${BUILD_ID}`);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const markdown = await response.text();
       article.innerHTML = `<p class="eyebrow">${escapeHtml(match.course.title)} · ${escapeHtml(match.module.title)}</p>${renderMarkdown(markdown)}`;
@@ -260,7 +261,7 @@ function handleRoute() {
 
 async function initialize() {
   try {
-    const response = await fetch("content/structure.json");
+    const response = await fetch(`content/structure.json?v=${BUILD_ID}`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     library = await response.json();
     renderNavigation();
