@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173f38">
+    <title>De la ADN la proteină</title>
+    <style>
+      :root { color-scheme: light; --ink:#18342f; --paper:#f4f0e8; --green:#1f5a4f; --gold:#e9b85d; --coral:#d85f47; --blue:#526bb3; }
+      * { box-sizing:border-box; }
+      body { margin:0; min-height:100vh; font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif; color:var(--ink); background:var(--paper); }
+      header { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem max(1rem,calc((100vw - 900px)/2)); border-bottom:1px solid #18342f22; }
+      header a { color:var(--green); font-weight:750; text-decoration:none; }
+      header span { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+      main { max-width:900px; margin:auto; padding:clamp(1.25rem,4vw,3rem) 1rem 3rem; }
+      h1 { max-width:680px; margin:.25rem 0 .65rem; font-family:Georgia,serif; font-size:clamp(2rem,7vw,4.7rem); line-height:.95; letter-spacing:-.04em; }
+      .lede { max-width:620px; color:#4f625e; line-height:1.6; }
+      .flow { position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(.55rem,2vw,1rem); margin:3rem 0 1.25rem; }
+      .flow::before { content:""; position:absolute; left:12%; right:12%; top:50%; height:2px; background:#18342f33; z-index:0; }
+      .node { position:relative; z-index:1; min-height:145px; padding:1rem .6rem; border:0; border-radius:50%; box-shadow:0 8px 24px #18342f19; color:white; font:inherit; cursor:pointer; transition:transform .2s, box-shadow .2s; }
+      .node:hover,.node:focus-visible { transform:translateY(-5px); box-shadow:0 13px 30px #18342f2b; outline:3px solid white; outline-offset:-6px; }
+      .node b { display:block; font-family:Georgia,serif; font-size:clamp(1.2rem,4vw,2rem); }
+      .node small { display:block; margin-top:.35rem; opacity:.85; }
+      .node[data-step="adn"] { background:var(--green); }
+      .node[data-step="arn"] { background:var(--blue); }
+      .node[data-step="proteina"] { background:var(--coral); }
+      .explanation { min-height:180px; padding:clamp(1rem,4vw,2rem); border:1px solid #18342f22; border-radius:24px; background:#fffaf1; }
+      .explanation h2 { margin:0 0 .5rem; font-family:Georgia,serif; font-size:1.7rem; }
+      .explanation p { max-width:680px; line-height:1.65; }
+      .tip { display:inline-flex; gap:.45rem; align-items:center; margin-top:1rem; padding:.5rem .7rem; border-radius:999px; background:#e9b85d33; font-size:.82rem; font-weight:700; }
+      @media (max-width:560px) { .flow { grid-template-columns:1fr; max-width:270px; margin-inline:auto; } .flow::before { top:12%; bottom:12%; left:50%; right:auto; width:2px; height:auto; } .node { min-height:125px; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../#/modul/genetica/00-orientare">← Înapoi la modul</a>
+      <span>Genetică · schemă 01</span>
+    </header>
+    <main>
+      <p class="tip">Atinge fiecare etapă</p>
+      <h1>De la informație la funcție</h1>
+      <p class="lede">O hartă simplificată a fluxului informației genetice. Selectează un nod pentru a reactiva ideea-cheie.</p>
+      <section class="flow" aria-label="Fluxul informației genetice">
+        <button class="node" data-step="adn"><b>ADN</b><small>păstrare</small></button>
+        <button class="node" data-step="arn"><b>ARN</b><small>transcriere</small></button>
+        <button class="node" data-step="proteina"><b>Proteină</b><small>traducere</small></button>
+      </section>
+      <section class="explanation" id="explanation" aria-live="polite">
+        <h2>Alege o etapă</h2>
+        <p>Începe cu ADN, apoi urmărește cum informația este copiată și utilizată.</p>
+      </section>
+    </main>
+    <script>
+      const facts = {
+        adn: ["ADN — arhiva", "Secvența nucleotidelor stochează informația genetică. Înaintea diviziunii, ADN-ul poate servi drept matriță pentru propria replicare."],
+        arn: ["ARN — mesajul de lucru", "Prin transcriere, informația unei regiuni de ADN este copiată într-o moleculă de ARN. Există mai multe tipuri de ARN, cu roluri diferite."],
+        proteina: ["Proteina — funcția", "În traducere, secvența ARN-ului mesager ghidează ordinea aminoacizilor. Proteina rezultată se pliază și poate îndeplini un rol celular."]
+      };
+      document.querySelector('.flow').addEventListener('click', (event) => {
+        const button = event.target.closest('[data-step]');
+        if (!button) return;
+        const [title, text] = facts[button.dataset.step];
+        document.querySelector('#explanation').innerHTML = `<h2>${title}</h2><p>${text}</p>`;
+      });
+    </script>
+  </body>
+</html>
