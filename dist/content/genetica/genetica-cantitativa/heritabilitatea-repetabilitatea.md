@@ -1,0 +1,1 @@
+# Heritabilitatea și repetabilitatea

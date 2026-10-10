@@ -634,24 +634,389 @@
       "title": "Genetica",
       "modules": [
         {
+          "id": "fundamente",
+          "title": "Modulul 1 · Fundamentele geneticii",
+          "topics": [
+            {
+              "id": "genetica-introducere",
+              "title": "Introducere în genetică",
+              "path": "content/genetica/fundamente/introducere.md"
+            },
+            {
+              "id": "genetica-istoria",
+              "title": "Istoria geneticii",
+              "path": "content/genetica/fundamente/istoria-geneticii.md"
+            },
+            {
+              "id": "genetica-concepte-fundamentale",
+              "title": "Gene, alele, genotip și fenotip",
+              "path": "content/genetica/fundamente/gene-alele-genotip-fenotip.md"
+            },
+            {
+              "id": "genetica-ciclul-celular-mitoza",
+              "title": "Ciclul celular și mitoza",
+              "path": "content/genetica/fundamente/ciclul-celular-mitoza.md"
+            },
+            {
+              "id": "genetica-meioza-gametogeneza",
+              "title": "Meioza, gametogeneza și fecundația",
+              "path": "content/genetica/fundamente/meioza-gametogeneza-fecundatia.md"
+            }
+          ]
+        },
+        {
           "id": "genetica-clasica",
-          "title": "Modulul 1 · Genetica clasică",
+          "title": "Modulul 2 · Genetica mendeliană",
           "topics": [
             {
               "id": "genetica-legile-mendel",
               "title": "Legile lui Mendel",
               "path": "content/genetica/genetica-clasica/legile-lui-mendel.md"
+            },
+            {
+              "id": "genetica-monohibridare",
+              "title": "Monohibridarea",
+              "path": "content/genetica/genetica-clasica/monohibridarea.md"
+            },
+            {
+              "id": "genetica-dihibridare-polihibridare",
+              "title": "Dihibridarea și polihibridarea",
+              "path": "content/genetica/genetica-clasica/dihibridarea-polihibridarea.md"
+            },
+            {
+              "id": "genetica-probabilitate-statistica",
+              "title": "Probabilitatea și analiza statistică în genetică",
+              "path": "content/genetica/genetica-clasica/probabilitate-analiza-statistica.md"
+            },
+            {
+              "id": "genetica-incrucisare-test",
+              "title": "Încrucișarea-test și retroîncrucișarea",
+              "path": "content/genetica/genetica-clasica/incrucisarea-test-retroincrucisarea.md"
+            }
+          ]
+        },
+        {
+          "id": "extensii-mendeliene",
+          "title": "Modulul 3 · Extensii ale geneticii mendeliene",
+          "topics": [
+            {
+              "id": "genetica-dominanta-alelism",
+              "title": "Dominanța, codominanța și alelismul multiplu",
+              "path": "content/genetica/extensii-mendeliene/dominanta-codominanta-alelism-multiplu.md"
+            },
+            {
+              "id": "genetica-gene-letale",
+              "title": "Genele letale",
+              "path": "content/genetica/extensii-mendeliene/gene-letale.md"
+            },
+            {
+              "id": "genetica-interactiuni-genice",
+              "title": "Interacțiunile genice și epistazia",
+              "path": "content/genetica/extensii-mendeliene/interactiuni-genice-epistazie.md"
+            },
+            {
+              "id": "genetica-pleiotropie-penetranta",
+              "title": "Pleiotropia, penetranța și expresivitatea",
+              "path": "content/genetica/extensii-mendeliene/pleiotropie-penetranta-expresivitate.md"
+            },
+            {
+              "id": "genetica-genotip-mediu",
+              "title": "Interacțiunea genotip–mediu",
+              "path": "content/genetica/extensii-mendeliene/interactiunea-genotip-mediu.md"
+            }
+          ]
+        },
+        {
+          "id": "citogenetica",
+          "title": "Modulul 4 · Citogenetică și transmitere cromozomială",
+          "topics": [
+            {
+              "id": "genetica-structura-cromozomilor",
+              "title": "Structura cromozomilor și cariotipul",
+              "path": "content/genetica/citogenetica/structura-cromozomilor-cariotipul.md"
+            },
+            {
+              "id": "genetica-linkage-recombinare",
+              "title": "Înlănțuirea genelor și recombinarea genetică",
+              "path": "content/genetica/citogenetica/inlantuirea-genelor-recombinarea.md"
+            },
+            {
+              "id": "genetica-harti-genetice",
+              "title": "Hărțile genetice și cartografierea genelor",
+              "path": "content/genetica/citogenetica/harti-genetice-cartografierea-genelor.md"
+            },
+            {
+              "id": "genetica-determinarea-sexului",
+              "title": "Determinarea sexului și ereditatea legată de sex",
+              "path": "content/genetica/citogenetica/determinarea-sexului-ereditatea-legata-de-sex.md"
+            },
+            {
+              "id": "genetica-compensare-dozaj",
+              "title": "Compensarea dozajului genic",
+              "path": "content/genetica/citogenetica/compensarea-dozajului-genic.md"
             }
           ]
         },
         {
           "id": "genetica-moleculara",
-          "title": "Modulul 2 · Genetica moleculară",
+          "title": "Modulul 5 · Organizarea și transmiterea materialului genetic",
           "topics": [
             {
               "id": "genetica-adn",
               "title": "Structura ADN-ului",
               "path": "content/genetica/genetica-moleculara/structura-adn.md"
+            },
+            {
+              "id": "genetica-organizarea-genomului",
+              "title": "Organizarea genomului și a cromatinei",
+              "path": "content/genetica/genetica-moleculara/organizarea-genomului-cromatinei.md"
+            },
+            {
+              "id": "genetica-replicarea-adn",
+              "title": "Replicarea ADN-ului",
+              "path": "content/genetica/genetica-moleculara/replicarea-adn.md"
+            },
+            {
+              "id": "genetica-recombinarea-adn",
+              "title": "Recombinarea ADN-ului",
+              "path": "content/genetica/genetica-moleculara/recombinarea-adn.md"
+            },
+            {
+              "id": "genetica-elemente-transpozabile",
+              "title": "Elementele genetice transpozabile",
+              "path": "content/genetica/genetica-moleculara/elemente-genetice-transpozabile.md"
+            }
+          ]
+        },
+        {
+          "id": "expresia-genelor",
+          "title": "Modulul 6 · Expresia și reglarea genelor",
+          "topics": [
+            {
+              "id": "genetica-arn-transcriere",
+              "title": "Tipurile de ARN și transcrierea",
+              "path": "content/genetica/expresia-genelor/arn-transcrierea.md"
+            },
+            {
+              "id": "genetica-procesarea-arn",
+              "title": "Procesarea ARN-ului",
+              "path": "content/genetica/expresia-genelor/procesarea-arn.md"
+            },
+            {
+              "id": "genetica-cod-genetic-translatie",
+              "title": "Codul genetic și translația",
+              "path": "content/genetica/expresia-genelor/codul-genetic-translatia.md"
+            },
+            {
+              "id": "genetica-reglare-procariote",
+              "title": "Reglarea expresiei genice la procariote",
+              "path": "content/genetica/expresia-genelor/reglarea-genica-procariote.md"
+            },
+            {
+              "id": "genetica-reglare-eucariote",
+              "title": "Reglarea expresiei genice la eucariote",
+              "path": "content/genetica/expresia-genelor/reglarea-genica-eucariote.md"
+            },
+            {
+              "id": "genetica-epigenetica",
+              "title": "Epigenetica",
+              "path": "content/genetica/expresia-genelor/epigenetica.md"
+            }
+          ]
+        },
+        {
+          "id": "mutatii-dinamica-genomului",
+          "title": "Modulul 7 · Mutații și dinamica genomului",
+          "topics": [
+            {
+              "id": "genetica-mutatii-genice",
+              "title": "Mutațiile genice",
+              "path": "content/genetica/mutatii-dinamica-genomului/mutatii-genice.md"
+            },
+            {
+              "id": "genetica-modificari-cromozomiale",
+              "title": "Modificările structurale ale cromozomilor",
+              "path": "content/genetica/mutatii-dinamica-genomului/modificari-structurale-cromozomi.md"
+            },
+            {
+              "id": "genetica-modificari-numar-cromozomi",
+              "title": "Modificările numărului de cromozomi",
+              "path": "content/genetica/mutatii-dinamica-genomului/modificari-numar-cromozomi.md"
+            },
+            {
+              "id": "genetica-agentii-mutageni",
+              "title": "Agenții mutageni și mutageneza",
+              "path": "content/genetica/mutatii-dinamica-genomului/agenti-mutageni-mutageneza.md"
+            },
+            {
+              "id": "genetica-repararea-adn",
+              "title": "Mecanismele de reparare a ADN-ului",
+              "path": "content/genetica/mutatii-dinamica-genomului/repararea-adn.md"
+            }
+          ]
+        },
+        {
+          "id": "ereditate-extranucleara-genetica-microbiana",
+          "title": "Modulul 8 · Ereditate extranucleară și genetică microbiană",
+          "topics": [
+            {
+              "id": "genetica-mitocondriala-cloroplastica",
+              "title": "Ereditatea mitocondrială și cloroplastică",
+              "path": "content/genetica/ereditate-extranucleara-genetica-microbiana/ereditate-mitocondriala-cloroplastica.md"
+            },
+            {
+              "id": "genetica-efect-matern",
+              "title": "Efectul matern și ereditatea citoplasmatică",
+              "path": "content/genetica/ereditate-extranucleara-genetica-microbiana/efect-matern-ereditate-citoplasmatica.md"
+            },
+            {
+              "id": "genetica-bacteriana-plasmide",
+              "title": "Genetica bacteriană și plasmidele",
+              "path": "content/genetica/ereditate-extranucleara-genetica-microbiana/genetica-bacteriana-plasmide.md"
+            },
+            {
+              "id": "genetica-transfer-orizontal",
+              "title": "Transferul orizontal de gene",
+              "path": "content/genetica/ereditate-extranucleara-genetica-microbiana/transfer-orizontal-gene.md"
+            },
+            {
+              "id": "genetica-virusurilor",
+              "title": "Genetica virusurilor",
+              "path": "content/genetica/ereditate-extranucleara-genetica-microbiana/genetica-virusurilor.md"
+            }
+          ]
+        },
+        {
+          "id": "genetica-cantitativa",
+          "title": "Modulul 9 · Genetica caracterelor cantitative",
+          "topics": [
+            {
+              "id": "genetica-ereditate-poligenica",
+              "title": "Ereditatea poligenică",
+              "path": "content/genetica/genetica-cantitativa/ereditatea-poligenica.md"
+            },
+            {
+              "id": "genetica-varianta-fenotipica",
+              "title": "Componentele variației fenotipice",
+              "path": "content/genetica/genetica-cantitativa/componentele-variatiei-fenotipice.md"
+            },
+            {
+              "id": "genetica-heritabilitate-repetabilitate",
+              "title": "Heritabilitatea și repetabilitatea",
+              "path": "content/genetica/genetica-cantitativa/heritabilitatea-repetabilitatea.md"
+            },
+            {
+              "id": "genetica-raspuns-selectie",
+              "title": "Răspunsul la selecție",
+              "path": "content/genetica/genetica-cantitativa/raspunsul-la-selectie.md"
+            },
+            {
+              "id": "genetica-qtl",
+              "title": "Locusurile caracterelor cantitative",
+              "path": "content/genetica/genetica-cantitativa/locusuri-caractere-cantitative.md"
+            }
+          ]
+        },
+        {
+          "id": "genetica-populatiilor-evolutie",
+          "title": "Modulul 10 · Genetica populațiilor și evoluția",
+          "topics": [
+            {
+              "id": "genetica-frecvente-hardy-weinberg",
+              "title": "Frecvențele alelice și echilibrul Hardy–Weinberg",
+              "path": "content/genetica/genetica-populatiilor-evolutie/frecvente-alelice-hardy-weinberg.md"
+            },
+            {
+              "id": "genetica-forte-evolutive",
+              "title": "Mutația, selecția, migrația și deriva genetică",
+              "path": "content/genetica/genetica-populatiilor-evolutie/forte-evolutive.md"
+            },
+            {
+              "id": "genetica-consangvinizare-heterozis",
+              "title": "Consangvinizarea și heterozisul",
+              "path": "content/genetica/genetica-populatiilor-evolutie/consangvinizare-heterozis.md"
+            },
+            {
+              "id": "genetica-structura-populatiilor",
+              "title": "Structura genetică a populațiilor",
+              "path": "content/genetica/genetica-populatiilor-evolutie/structura-genetica-populatiilor.md"
+            },
+            {
+              "id": "genetica-evolutie-moleculara",
+              "title": "Evoluția moleculară și filogenia",
+              "path": "content/genetica/genetica-populatiilor-evolutie/evolutie-moleculara-filogenie.md"
+            }
+          ]
+        },
+        {
+          "id": "genetica-umana",
+          "title": "Modulul 11 · Genetica umană",
+          "topics": [
+            {
+              "id": "genetica-arbori-genealogici",
+              "title": "Analiza arborilor genealogici",
+              "path": "content/genetica/genetica-umana/analiza-arborilor-genealogici.md"
+            },
+            {
+              "id": "genetica-boli-monogenice",
+              "title": "Bolile monogenice",
+              "path": "content/genetica/genetica-umana/boli-monogenice.md"
+            },
+            {
+              "id": "genetica-boli-cromozomiale",
+              "title": "Bolile cromozomiale",
+              "path": "content/genetica/genetica-umana/boli-cromozomiale.md"
+            },
+            {
+              "id": "genetica-boli-multifactoriale",
+              "title": "Bolile multifactoriale",
+              "path": "content/genetica/genetica-umana/boli-multifactoriale.md"
+            },
+            {
+              "id": "genetica-diagnostic-consiliere",
+              "title": "Diagnosticul genetic și consilierea genetică",
+              "path": "content/genetica/genetica-umana/diagnostic-consiliere-genetica.md"
+            }
+          ]
+        },
+        {
+          "id": "genetica-aplicata",
+          "title": "Modulul 12 · Genetică aplicată și biotehnologii",
+          "topics": [
+            {
+              "id": "genetica-adn-recombinant",
+              "title": "Tehnologia ADN-ului recombinant",
+              "path": "content/genetica/genetica-aplicata/tehnologia-adn-recombinant.md"
+            },
+            {
+              "id": "genetica-pcr-electroforeza",
+              "title": "PCR și electroforeza acizilor nucleici",
+              "path": "content/genetica/genetica-aplicata/pcr-electroforeza.md"
+            },
+            {
+              "id": "genetica-secventiere-genomica",
+              "title": "Secvențierea, genomica și bioinformatica",
+              "path": "content/genetica/genetica-aplicata/secventiere-genomica-bioinformatica.md"
+            },
+            {
+              "id": "genetica-editare-genomica",
+              "title": "Editarea genomică și sistemul CRISPR-Cas",
+              "path": "content/genetica/genetica-aplicata/editare-genomica-crispr-cas.md"
+            },
+            {
+              "id": "genetica-markeri-moleculari",
+              "title": "Markerii moleculari și selecția asistată",
+              "path": "content/genetica/genetica-aplicata/markeri-moleculari-selectie-asistata.md"
+            },
+            {
+              "id": "genetica-ameliorare",
+              "title": "Aplicațiile geneticii în ameliorarea plantelor și animalelor",
+              "path": "content/genetica/genetica-aplicata/ameliorarea-plantelor-animalelor.md"
+            },
+            {
+              "id": "genetica-bioetica-biosecuritate",
+              "title": "Bioetica și biosecuritatea în genetică",
+              "path": "content/genetica/genetica-aplicata/bioetica-biosecuritate.md"
             }
           ]
         }

@@ -1,0 +1,1 @@
+# Interacțiunea genotip–mediu

@@ -1,0 +1,1 @@
+# Procesarea ARN-ului

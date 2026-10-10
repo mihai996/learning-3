@@ -1,0 +1,1 @@
+# Pleiotropia, penetranța și expresivitatea
