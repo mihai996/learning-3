@@ -209,7 +209,7 @@ function findTopic(id) {
 function showHome() {
   article.innerHTML = homeMarkup;
   document.querySelectorAll(".topic-link.active").forEach((item) => item.classList.remove("active"));
-  document.title = "Biblioteca pentru examene";
+  document.title = "Learning 3";
   document.querySelector("#content").focus({ preventScroll: true });
   window.scrollTo({ top: 0, behavior: "smooth" });
   closeMenu();
@@ -253,7 +253,7 @@ async function showTopic(topicId) {
       const markdown = await response.text();
       article.innerHTML = `<p class="eyebrow">${escapeHtml(match.course.title)} · ${escapeHtml(match.module.title)}</p>${renderMarkdown(markdown)}`;
     }
-    document.title = `${match.topic.title} — Biblioteca pentru examene`;
+    document.title = `${match.topic.title} — Learning 3`;
   } catch (error) {
     article.innerHTML = '<h1>Conținut indisponibil</h1><p class="status">Fișierul temei nu a putut fi încărcat. Verifică adresa din structure.json.</p>';
     console.error(error);
