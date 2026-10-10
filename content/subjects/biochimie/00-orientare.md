@@ -30,9 +30,3 @@ status: draft
 - consum sau producție de energie;
 - legături cu alte căi;
 - situații fiziologice în care predomină.
-
-## De completat
-
-- [ ] Programa exactă
-- [ ] Formulele obligatorii
-- [ ] Cazurile clinice sau aplicațiile cerute

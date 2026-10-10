@@ -42,8 +42,8 @@ npm run check
 npm run dev
 ```
 
-Adresa locală este afișată în terminal. Progresul, favoritele și ultima lectură
-sunt păstrate numai în browserul dispozitivului.
+Adresa locală este afișată în terminal. Site-ul nu păstrează progres, note sau
+alte date despre cititor.
 
 ## Publicare
 
@@ -52,5 +52,5 @@ Proiectul produce un site static în `dist/`. Workflow-ul din
 este urcat într-un repository GitHub și Pages este configurat cu sursa
 „GitHub Actions”.
 
-Site-ul nu are operații de scriere pe server. Conținutul public este read-only;
-doar progresul personal este salvat local în browser.
+Site-ul nu are operații de scriere pe server. Conținutul public este read-only,
+iar interfața nu salvează date în browser.

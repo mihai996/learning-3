@@ -30,9 +30,3 @@ status: draft
 - fertilitate și utilizări;
 - riscuri de degradare;
 - măsuri de conservare.
-
-## De completat
-
-- [ ] Programa exactă
-- [ ] Sistemul de clasificare cerut la examen
-- [ ] Profilele care trebuie recunoscute

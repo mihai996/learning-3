@@ -29,9 +29,3 @@ Pentru fiecare fenomen, încearcă să răspunzi la trei întrebări:
 1. **Molecular:** ce molecule și enzime participă?
 2. **Celular:** unde și când se întâmplă?
 3. **Organism/populație:** ce efect observabil produce?
-
-## De completat
-
-- [ ] Programa exactă
-- [ ] Problemele-tip
-- [ ] Convențiile de notație folosite la curs

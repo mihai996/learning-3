@@ -28,9 +28,3 @@ status: draft
 - compară două noțiuni apropiate;
 - rezolvă o întrebare aplicată;
 - notează ce trebuie revăzut peste 1, 3 și 7 zile.
-
-## De completat
-
-- [ ] Programa exactă
-- [ ] Lista întrebărilor de examen
-- [ ] Bibliografia recomandată de profesor
